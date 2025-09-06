@@ -19,6 +19,13 @@
                         Student
                     @endrole
                     </p>
+
+
+                    @role(App\Enums\LocalRole::ADMIN)
+                        <a href="{{ route('workshops.create') }}">add workshop</a>
+                    @endrole
+
+
                 </div>
             </div>
         </div>

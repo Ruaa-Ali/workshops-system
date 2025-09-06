@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Workshops\CreateWorkshop;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\ProfileController;
 
@@ -18,20 +20,33 @@ Route::group(
             ->middleware(["auth", "verified"])
             ->name("dashboard");
 
+        require __DIR__ . "/auth.php";
+
         Route::middleware("auth")->group(function () {
             Route::get("/profile", [ProfileController::class, "edit"])->name(
                 "profile.edit",
             );
+
+            //
             Route::patch("/profile", [
                 ProfileController::class,
                 "update",
             ])->name("profile.update");
+
+            //
             Route::delete("/profile", [
                 ProfileController::class,
                 "destroy",
             ])->name("profile.destroy");
+
+            // IMPORTANT: to tell livewire to handle localized url
+            Livewire::setUpdateRoute(
+                fn($handle) => Route::post("/custom/livewire/update", $handle),
+            );
+
+            Route::get("workshops/create", CreateWorkshop::class)->name(
+                "workshops.create",
+            );
         });
     },
 );
-
-require __DIR__ . "/auth.php";
