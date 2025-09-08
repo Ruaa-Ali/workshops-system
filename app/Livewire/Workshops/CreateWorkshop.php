@@ -4,6 +4,7 @@ namespace App\Livewire\Workshops;
 
 use App\Livewire\Forms\WorkshopForm;
 use App\Models\Workshop;
+use App\Traits\ToastNotifications;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -12,7 +13,7 @@ use Livewire\Attributes\Layout;
 #[Layout("layouts.app")]
 class CreateWorkshop extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, ToastNotifications;
 
     public WorkshopForm $form;
 
@@ -59,11 +60,8 @@ class CreateWorkshop extends Component
                 "image",
             ]);
 
-            $this->dispatch(
-                "toastMagic",
-                status: "success",
-                title: __("messages.success"),
-                message: __("messages.workshop_created"),
+            $this->toastSuccess(
+                __("messages.workshop_created"),
                 options: [
                     "showCloseBtn" => true,
                     "customBtnText" => __("messages.show"),
@@ -72,12 +70,7 @@ class CreateWorkshop extends Component
                 ],
             );
         } catch (Exception $e) {
-            $this->dispatch(
-                "toastMagic",
-                status: "error",
-                title: __("messages.error"),
-                message: $e->getMessage(),
-            );
+            $this->toastError($e->getMessage());
         }
     }
 
