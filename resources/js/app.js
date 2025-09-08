@@ -1,6 +1,6 @@
 import "./bootstrap";
 
-import Alpine from "alpinejs";
+// import Alpine from "alpinejs";
 
 document.addEventListener("alpine:init", () => {
     Alpine.store("theme", {
@@ -33,4 +33,4 @@ document.addEventListener("alpine:init", () => {
     });
 });
 
-Alpine.start();
+// Alpine.start();

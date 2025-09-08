@@ -16,6 +16,7 @@
 
 
         {!! ToastMagic::styles() !!}
+        @livewireStyles
     </head>
 
     <body class="font-sans antialiased" >
@@ -37,5 +38,6 @@
             </main>
         </div>
         {!! ToastMagic::scripts() !!}
+        @livewireScripts
     </body>
 </html>
