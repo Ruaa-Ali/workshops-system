@@ -1,6 +1,6 @@
 <button
     type="button"
-     class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+     class=" rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
      x-on:click="$store.theme.toggle()"
 >
     <!-- Sun icon (light mode) -->

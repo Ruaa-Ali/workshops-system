@@ -51,8 +51,12 @@
                     </x-slot>
                 </x-dropdown>
 
-                <!-- Theme Toggle -->
-                <x-theme-toggle class="ml-3" />
+
+                <div class="flex gap-4 px-3 py-2 rounded-full bg-gray-100 dark:bg-gray-700 transition-colors">
+                    <x-theme-toggle class="ml-3" />
+                    <x-language-toggle class="ml-3" />
+                </div>
+
             </div>
 
             <!-- Hamburger -->
@@ -77,10 +81,18 @@
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+
+            <div class='flex justify-between px-4'>
+                <div class="">
+                    <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                </div>
+                <div class="flex items-center gap-4 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 transition-colors">
+                    <x-theme-toggle  />
+                    <x-language-toggle  />
+                </div>
             </div>
+
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
@@ -98,10 +110,6 @@
                     </x-responsive-nav-link>
                 </form>
 
-                <!-- Theme Toggle for mobile -->
-                <div class="px-4 py-2">
-                    <x-theme-toggle />
-                </div>
             </div>
         </div>
     </div>
