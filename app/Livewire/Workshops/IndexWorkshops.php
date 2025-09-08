@@ -9,6 +9,8 @@ use Livewire\Component;
 #[Layout("layouts.app")]
 class IndexWorkshops extends Component
 {
+    protected $listeners = ["workshop-deleted" => '$refresh'];
+
     public function fetchWorkshops()
     {
         return Workshop::with("creator")->paginate(5);

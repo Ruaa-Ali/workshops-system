@@ -32,4 +32,13 @@ return [
     "desc" => "Description",
     "edit" => "Edit",
     "delete" => "Delete",
+    "delete_warning" =>
+        "Are you sure you want to delete this item? You won't be able to retrive it once deleted",
+    "deleting_warning_heading" => "Confirm Deleting :item",
+    "cancel" => "Cancel",
+    "warning" => "Warning",
+    "info" => "Info",
+    "not_auth_for_operation" =>
+        "Sorry, you are not allowed to perform this operation",
+    "deleted_successfully" => "Item deleted successfully",
 ];

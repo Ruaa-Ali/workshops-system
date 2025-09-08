@@ -1,7 +1,7 @@
 <div>
 
 
-    <div class="overflow-x-auto">
+    <div class="overflow-x-auto mx-2 ">
         <table class="styled-table">
             <thead>
                 <tr>
@@ -44,8 +44,20 @@
                                 {{ __('messages.edit') }}
                             </x-link-button>
 
-                            {{-- href="{{ route('workshop.delete', $w->id) }}" --}}
-                            <x-link-button class="bg-red-800 dark:bg-red-500" herf="">
+                            <x-primary-button
+                                class="bg-red-800 dark:bg-red-500"
+                                {{-- wire:confirm="{{ __('Are you sure you want to delete this workshop?') }}" --}}
+                                wire:click="
+                                $dispatch(
+                                    'openModal',
+                                    {
+                                        component: 'workshops.delete-workshop-warning',
+                                        arguments: {
+                                            id: {{ $w->id }}
+                                        }
+                                    }
+                                )"
+                            >
                                 {{ __('messages.delete') }}
                             </x-link-button>
                         </div>

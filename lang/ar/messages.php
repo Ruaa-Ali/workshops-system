@@ -33,4 +33,13 @@ return [
     "desc" => "الوصف",
     "edit" => "تعديل",
     "delete" => "حذف",
+    "delete_warning" =>
+        "هل أنت متأكد من عملية الحذف؟ لن تتمكن من استعادة هذه البيانات بعد حذفها",
+
+    "deleting_warning_heading" => "تأكيد حذف :item",
+    "cancel" => "إلغاء",
+    "warning" => "تنبية",
+    "info" => "معلومة",
+    "not_auth_for_operation" => "المعذرة، لا تمتلك صلاحيات للقيام بهذه العملية",
+    "deleted_successfully" => "تم الحذف بنجاح",
 ];
