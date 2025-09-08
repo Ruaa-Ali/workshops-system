@@ -41,7 +41,7 @@ class CreateWorkshop extends Component
                 "description_ar" => $this->form->descriptionAr,
                 "duration_hours" => $this->form->durationHours,
                 "initial_price" => $this->form->initialPrice,
-                "image" => $fileName,
+                "image" => "images/workshops/$fileName",
                 "created_by" => auth()->id(), // Current user ID
             ]);
             // Optional: Fire event
