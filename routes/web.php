@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Workshops\CreateWorkshop;
+use App\Livewire\Workshops\IndexWorkshops;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -46,6 +47,10 @@ Route::group(
 
             Route::get("workshops/create", CreateWorkshop::class)->name(
                 "workshops.create",
+            );
+
+            Route::get("workshops", IndexWorkshops::class)->name(
+                "workshops.index",
             );
         });
     },

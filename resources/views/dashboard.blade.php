@@ -22,7 +22,10 @@
 
 
                     @role(App\Enums\LocalRole::ADMIN)
+                    <div class="flex flex-col">
                         <a href="{{ route('workshops.create') }}">add workshop</a>
+                        <a href="{{ route('workshops.index') }}">view workshops</a>
+                    </div>
                     @endrole
 
 

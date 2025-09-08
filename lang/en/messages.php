@@ -25,4 +25,11 @@ return [
     "show" => "Show",
     "error" => "Error!",
     "success" => "Success!",
+
+    "created_by" => "Created by",
+    "created_at" => "Created at",
+    "title" => "Title",
+    "desc" => "Description",
+    "edit" => "Edit",
+    "delete" => "Delete",
 ];

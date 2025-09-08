@@ -18,3 +18,12 @@
 .theme-icon-colors {
     @apply fill-gray-400 dark:fill-gray-500 stroke-gray-400 dark:stroke-gray-500;
 }
+
+.styled-table {
+    @apply table-auto border border-gray-600 rounded mt-4 mx-2;
+}
+
+.styled-table td,
+th {
+    @apply border border-gray-600 rounded px-2 py-3;
+}
