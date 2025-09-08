@@ -39,5 +39,6 @@
         </div>
         {!! ToastMagic::scripts() !!}
         @livewireScripts
+        @livewire('wire-elements-modal')
     </body>
 </html>
