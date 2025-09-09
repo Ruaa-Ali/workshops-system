@@ -21,6 +21,9 @@
 
     <body class="font-sans antialiased" >
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            @include('layouts.sidebar')
+
+                <div class="flex flex-col flex-1 w-full  {{app()->getLocale() == 'en' ? 'md:pl-64' : 'md:pr-64' }} ">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -40,5 +43,6 @@
         {!! ToastMagic::scripts() !!}
         @livewireScripts
         @livewire('wire-elements-modal')
+        </div>
     </body>
 </html>

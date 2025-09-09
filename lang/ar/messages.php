@@ -44,4 +44,7 @@ return [
     "deleted_successfully" => "تم الحذف بنجاح",
 
     "workshop_updated" => "تم تعديل الورشة بنجاح",
+
+    "workshops" => "الورش",
+    "dashboard" => "لوحة التحكم",
 ];

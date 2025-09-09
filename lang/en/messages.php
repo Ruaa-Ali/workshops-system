@@ -43,4 +43,7 @@ return [
     "deleted_successfully" => "Item deleted successfully",
 
     "workshop_updated" => "Workshop updated successfully!",
+
+    "workshops" => "Workshops",
+    "dashboard" => "Dashboard",
 ];
