@@ -48,8 +48,6 @@ class CreateWorkshop extends Component
             // Optional: Fire event
             // event(new WorkshopCreated($workshop));
 
-            // TODO: this is not working for some reason
-            // $this->form->reset();
             $this->form->reset([
                 "titleEn",
                 "titleAr",
@@ -65,8 +63,7 @@ class CreateWorkshop extends Component
                 options: [
                     "showCloseBtn" => true,
                     "customBtnText" => __("messages.show"),
-                    // TODO: replace with correct route
-                    "customBtnLink" => route("dashboard"), // route('workshop/' . $workshop->id)
+                    "customBtnLink" => route("workshops.update", $workshop->id),
                 ],
             );
         } catch (Exception $e) {

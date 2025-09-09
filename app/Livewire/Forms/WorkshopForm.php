@@ -25,16 +25,21 @@ class WorkshopForm extends Form
     #[Validate]
     public $image;
 
+    // to hold the current image path in update
+    public string $currentImage;
+
+    // public $updatedImage
+
     public function setWorkshop(Workshop $workshop): void
     {
         $this->workshop = $workshop;
-        $this->titleEn = $workshop->titleEn;
-        $this->titleAr = $workshop->titleAr;
-        $this->descriptionEn = $workshop->descriptionEn;
-        $this->descriptionAr = $workshop->descriptionAr;
-        $this->durationHours = $workshop->durationHours;
-        $this->initialPrice = $workshop->initialPrice;
-        $this->image = $workshop->image;
+        $this->titleEn = $workshop->title_en;
+        $this->titleAr = $workshop->title_ar;
+        $this->descriptionEn = $workshop->description_en;
+        $this->descriptionAr = $workshop->description_ar;
+        $this->durationHours = $workshop->duration_hours;
+        $this->initialPrice = $workshop->initial_price;
+        $this->currentImage = $workshop->image;
     }
 
     protected function rules(): array
@@ -45,13 +50,13 @@ class WorkshopForm extends Form
             "descriptionEn" => "required|string",
             "descriptionAr" => "required|string",
             "durationHours" => "required|integer|min:1",
-            "initialPrice" => "required|integer|min:0",
-            "image" => "image|mimes:jpeg,png,jpg,gif|max:10240", // 10 mb
+            "initialPrice" => "required|min:0",
+            "image" => "", // 10 mb
         ];
 
         // if this class is accessed via the create component, then make the image required
         if ($this->workshop == null) {
-            $rules["image"] .= "|required";
+            $rules["image"] = "required|image|mimes:jpeg,png,jpg,gif|max:10240";
         }
 
         return $rules;
@@ -74,7 +79,7 @@ class WorkshopForm extends Form
             "durationHours.integer" => __("messages.int_type"),
 
             "initalPrice.required" => __("messages.required_field"),
-            "initalPrice.integer" => __("messages.int_type"),
+            // "initalPrice.number" => __("messages.int_type"),
             "initalPrice.min" => __("messages.min_value"),
 
             "image.required" => __("messages.required_field"),

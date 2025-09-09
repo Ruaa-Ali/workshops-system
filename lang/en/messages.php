@@ -41,4 +41,6 @@ return [
     "not_auth_for_operation" =>
         "Sorry, you are not allowed to perform this operation",
     "deleted_successfully" => "Item deleted successfully",
+
+    "workshop_updated" => "Workshop updated successfully!",
 ];

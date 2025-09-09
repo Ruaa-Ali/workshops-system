@@ -2,6 +2,7 @@
 
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
+use App\Livewire\Workshops\UpdateWorkshop;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -52,6 +53,11 @@ Route::group(
             Route::get("workshops", IndexWorkshops::class)->name(
                 "workshops.index",
             );
+
+            Route::get(
+                "workshops/{workshop}/update",
+                UpdateWorkshop::class,
+            )->name("workshops.update");
         });
     },
 );

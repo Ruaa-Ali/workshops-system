@@ -42,4 +42,6 @@ return [
     "info" => "معلومة",
     "not_auth_for_operation" => "المعذرة، لا تمتلك صلاحيات للقيام بهذه العملية",
     "deleted_successfully" => "تم الحذف بنجاح",
+
+    "workshop_updated" => "تم تعديل الورشة بنجاح",
 ];
