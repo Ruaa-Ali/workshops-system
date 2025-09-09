@@ -46,4 +46,6 @@ return [
 
     "workshops" => "Workshops",
     "dashboard" => "Dashboard",
+
+    "create_workshop" => "Create New Workshop",
 ];

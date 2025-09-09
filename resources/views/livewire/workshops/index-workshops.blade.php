@@ -1,5 +1,10 @@
-<div>
+<div class="flex flex-col">
 
+
+
+    <x-link-button href="{{ route('workshops.create') }}" class="self-end mt-5 mx-2">
+        {{ __('messages.create_workshop') }}
+    </x-link-button>
 
     <div class="overflow-x-auto mx-2 ">
         <table class="styled-table">

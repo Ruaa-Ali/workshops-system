@@ -47,4 +47,6 @@ return [
 
     "workshops" => "الورش",
     "dashboard" => "لوحة التحكم",
+
+    "create_workshop" => "إنشاء ورشة جديدة",
 ];
