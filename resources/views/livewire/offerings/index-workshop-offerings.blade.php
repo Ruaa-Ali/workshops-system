@@ -6,14 +6,8 @@
     <div class="overflow-x-auto mx-2 ">
         <table class="styled-table">
             <thead>
-                {{-- `start_date`,
-                    `end_date`,
-                    `hours_per_day`,
-                    `max_capacity`,
-                    `price`,
-                    `workshop_id`,
-                    `teacher_id`, --}}
                 <tr>
+                    <th>ID</th>
                     <th>{{ __('messages.title') }}</th>
                     <th>{{ __('messages.start_date') }}</th>
                     <th>{{ __('messages.end_date') }}</th>
@@ -28,6 +22,7 @@
             <tbody>
                 @foreach ($offerings as $o)
                 <tr>
+                    <td> <p>{{ $o->id }}</p> </td>
                     <td> <a
                         href="{{ route('workshops.update', $o->workshop->id) }}"
                         class="underline">

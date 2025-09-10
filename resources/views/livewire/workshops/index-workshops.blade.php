@@ -10,6 +10,7 @@
         <table class="styled-table">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>{{ __('messages.title') }}</th>
                     <th class="hidden md:table-cell">{{ __('messages.desc') }}</th>
                     <th>{{ __('messages.initial_price') }}</th>
@@ -24,6 +25,7 @@
             <tbody>
                 @foreach ($workshops as $w)
                 <tr>
+                    <td>{{ $w->id }}</td>
                     <td>
                         <p>{{ $w->title_ar }}</p>
                         <br>
