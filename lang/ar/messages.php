@@ -76,4 +76,20 @@ return [
         "لن تتمكن من حذف هذه الورشة لاحتوائها على بعض الدُفع",
 
     "offerings_count" => "عدد الدُفع",
+    "archive" => "أرشفة",
+    "restore" => "استعادة",
+    "archive_workshop_msg" =>
+        "هذه الورشة تحتوي على صفوف وسيتم نقلها إلى الأرشيف. لن يكون ممكنًا إنشاء صفوف جديدة حتى تقوم باستعادة الورشة. هل تريد المتابعة؟",
+
+    "archived_successfully" => "تمت أرشفة العنصر بنجاح.",
+
+    "archiving_warning_heading" => "تأكيد أرشفة :item",
+
+    "restored_successfully" => "تمت استعادة العنصر بنجاح!",
+
+    "restore_warning_heading" => "تأكيد استعادة :item",
+
+    "restore_workshop_msg" =>
+        // "You will restore this workshop which will allow you to edit it and create classes with it. Continue?",
+        "ستقوم باستعادة هذا العنصر حيث ستتمكن من التعديل عليه وإنشاء صفوف جديدة. متابعة؟",
 ];

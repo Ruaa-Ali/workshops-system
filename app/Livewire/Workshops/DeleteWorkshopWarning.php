@@ -35,13 +35,12 @@ class DeleteWorkshopWarning extends ModalComponent
             //     $this->dispatch("closeModal");
             // }
 
-            // TODO: must handle when workshops has offerings
             if (count($this->workshop->offerings)) {
                 $this->toastError(__("messages.workshop_has_offerings"));
                 $this->closeModal();
                 return;
             }
-            $this->workshop->delete();
+            $this->workshop->forceDelete();
             $this->dispatch("workshop-deleted");
             $this->toastSuccess(__("messages.deleted_successfully"));
             $this->closeModal();

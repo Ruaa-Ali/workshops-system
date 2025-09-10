@@ -74,4 +74,19 @@ return [
         "You cannot delete this workshop because it has some classes",
 
     "offerings_count" => "Classes Count",
+    "archive" => "Archive",
+    "restore" => "Restore",
+    "archive_workshop_msg" =>
+        "This workshop contains classes and will be moved to archive. Class creation will be disabled until restored. Continue?",
+
+    "archived_successfully" => "Item archived successfully.",
+
+    "archiving_warning_heading" => "Confirm Archiving :item",
+
+    "restored_successfully" => "Item has been restored successfully!",
+
+    "restore_warning_heading" => "Confirm Restoring :item",
+
+    "restore_workshop_msg" =>
+        "You will restore this workshop which will allow you to edit it and create classes with it. Continue?",
 ];
