@@ -72,4 +72,6 @@ return [
     "offering_updated" => "Workshop Offering updated successfully!",
     "workshop_has_offerings" =>
         "You cannot delete this workshop because it has some classes",
+
+    "offerings_count" => "Classes Count",
 ];

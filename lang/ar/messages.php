@@ -74,4 +74,6 @@ return [
 
     "workshop_has_offerings" =>
         "لن تتمكن من حذف هذه الورشة لاحتوائها على بعض الدُفع",
+
+    "offerings_count" => "عدد الدُفع",
 ];

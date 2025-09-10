@@ -18,6 +18,7 @@
                     <th  class="hidden md:table-cell">{{ __('messages.display_image') }}</th>
                     {{-- TODO: maybe show how many offerings of that workshop --}}
                     <th>{{ __('messages.created_at') }}</th>
+                    <th>{{ __('messages.offerings_count') }}</th>
                     <th>{{ __('messages.created_by') }}</th>
                     <th></th>
                 </tr>
@@ -42,6 +43,7 @@
                         <img width="100px" src="{{ asset( url(Storage::url( $w->image)) ) }}" alt="">
                     </td>
                     <td>{{ $w->created_at }}</td>
+                    <td>{{ count($w->offerings) }}</td>
                     {{-- TODO: must be able to open admin's details page --}}
                     <td>{{ $w->creator->name }}</td>
                     <td>
