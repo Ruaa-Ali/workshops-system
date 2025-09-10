@@ -24,6 +24,6 @@ class WorkshopOffering extends Model
 
     public function workshop(): BelongsTo
     {
-        return $this->belongsTo(Workshop::class, foreignKey: "teacher_id");
+        return $this->belongsTo(Workshop::class, foreignKey: "workshop_id");
     }
 }

@@ -36,6 +36,11 @@ class Workshop extends Model
         return $this->belongsTo(User::class, "created_by");
     }
 
+    public function offerings(): BelongsTo
+    {
+        return $this->hasMany(WorkshopOffering::class, "workshop_id");
+    }
+
     // Accessor for current locale title
     public function getTitleAttribute(): string
     {
