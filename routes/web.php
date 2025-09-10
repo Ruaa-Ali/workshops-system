@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Offerings\CreateWorkshopOffering;
+use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
 use App\Livewire\Workshops\UpdateWorkshop;
@@ -62,6 +63,10 @@ Route::group(
 
             Route::get("offerings/create", CreateWorkshopOffering::class)->name(
                 "offerings.create",
+            );
+
+            Route::get("offerings", IndexWorkshopOfferings::class)->name(
+                "offerings.index",
             );
         });
     },

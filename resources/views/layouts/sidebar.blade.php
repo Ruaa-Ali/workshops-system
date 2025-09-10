@@ -28,6 +28,9 @@
                     <x-responsive-nav-link :href="route('workshops.index')" :active="request()->routeIs('workshops.index')">
                         {{ __('messages.workshops') }}
                     </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('offerings.index')" :active="request()->routeIs('offerings.index')">
+                        {{ __('messages.workshop_offerings') }}
+                    </x-responsive-nav-link>
                     <!-- Add other navigation links here -->
                 </nav>
             </div>

@@ -67,4 +67,6 @@ return [
     "teacher" => "معلم",
     "workshop_details" => "تفاصيل الورشة",
     "unable_to_find_workshop" => "لا توجد تفاصيل هذه الورشة",
+
+    "create_offering" => "إنشاء دفعة جديدة",
 ];

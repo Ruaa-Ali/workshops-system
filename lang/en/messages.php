@@ -66,4 +66,6 @@ return [
     "teacher" => "Teacher",
     "workshop_details" => "Workshop Details",
     "unable_to_find_workshop" => "Unable to find workshop",
+
+    "create_offering" => "Create New Offering",
 ];
