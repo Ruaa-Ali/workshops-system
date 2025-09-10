@@ -69,4 +69,6 @@ return [
     "unable_to_find_workshop" => "لا توجد تفاصيل هذه الورشة",
 
     "create_offering" => "إنشاء دفعة جديدة",
+
+    "offering_updated" => "تم تعديل بيانات الدفعة بنجاح",
 ];

@@ -27,8 +27,8 @@ class WorkshopOfferingForm extends Form
 
     public function setOffering(WorkshopOffering $offering): void
     {
-        $this->startDate = $offering->start_date;
-        $this->endDate = $offering->end_date;
+        $this->startDate = date("Y-m-d", strtotime($offering->start_date));
+        $this->endDate = date("Y-m-d", strtotime($offering->end_date));
         $this->hoursPerDay = $offering->hours_per_day;
         $this->maxCapacity = $offering->max_capacity;
         $this->price = $offering->price;

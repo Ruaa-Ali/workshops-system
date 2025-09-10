@@ -24,7 +24,8 @@ class Workshop extends Model
     ];
 
     protected $casts = [
-        "initial_price" => "decimal:2",
+        // "initial_price" => "decimal:2",
+        "initial_price" => "integer",
         "duration_hours" => "integer",
     ];
 

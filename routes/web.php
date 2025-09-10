@@ -2,6 +2,7 @@
 
 use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Offerings\IndexWorkshopOfferings;
+use App\Livewire\Offerings\UpdateWorkshopOfferings;
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
 use App\Livewire\Workshops\UpdateWorkshop;
@@ -68,6 +69,11 @@ Route::group(
             Route::get("offerings", IndexWorkshopOfferings::class)->name(
                 "offerings.index",
             );
+
+            Route::get(
+                "offerings/{offering}/update",
+                UpdateWorkshopOfferings::class,
+            )->name("offerings.update");
         });
     },
 );

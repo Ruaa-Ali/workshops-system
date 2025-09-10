@@ -41,7 +41,7 @@
                     <td> <p>{{ $o->created_at }}</p> </td>
                     <td>
                         <div class="flex flex-col gap-2 items-center">
-                            <x-link-button href="">
+                            <x-link-button href="{{ route('offerings.update', $o->id) }}">
                                 {{ __('messages.edit') }}
                             </x-link-button>
 
