@@ -20,10 +20,22 @@
 }
 
 .styled-table {
-    @apply w-full table-auto border border-gray-600 rounded mt-4;
+    @apply w-full table-auto border border-gray-600 rounded mt-4 text-center;
+}
+
+.styled-table thead {
+    @apply bg-white dark:bg-gray-800 border border-gray-600;
 }
 
 .styled-table td,
 th {
+    @apply rounded px-2 py-3;
+}
+
+.styled-table tr:nth-child(even) {
     @apply border border-gray-600 rounded px-2 py-3;
+}
+
+.styled-table tr:hover {
+    @apply bg-white dark:bg-gray-800;
 }
