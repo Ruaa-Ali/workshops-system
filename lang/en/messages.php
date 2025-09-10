@@ -70,4 +70,6 @@ return [
     "create_offering" => "Create New Offering",
 
     "offering_updated" => "Workshop Offering updated successfully!",
+    "workshop_has_offerings" =>
+        "You cannot delete this workshop because it has some classes",
 ];

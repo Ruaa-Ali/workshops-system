@@ -71,4 +71,7 @@ return [
     "create_offering" => "إنشاء دفعة جديدة",
 
     "offering_updated" => "تم تعديل بيانات الدفعة بنجاح",
+
+    "workshop_has_offerings" =>
+        "لن تتمكن من حذف هذه الورشة لاحتوائها على بعض الدُفع",
 ];
