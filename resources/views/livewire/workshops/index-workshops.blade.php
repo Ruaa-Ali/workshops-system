@@ -63,7 +63,7 @@
                                 )"
                             >
                                 {{ __('messages.delete') }}
-                            </x-link-button>
+                            </x-primary-button>
                         </div>
                     </td>
                 </tr>
