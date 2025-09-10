@@ -23,12 +23,6 @@ class Workshop extends Model
         "created_by",
     ];
 
-    protected $casts = [
-        // "initial_price" => "decimal:2",
-        "initial_price" => "integer",
-        "duration_hours" => "integer",
-    ];
-
     /**
      * @return BelongsTo<User,Workshop>
      */
