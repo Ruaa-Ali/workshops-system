@@ -49,4 +49,22 @@ return [
     "dashboard" => "لوحة التحكم",
 
     "create_workshop" => "إنشاء ورشة جديدة",
+
+    "date_field" => "يجب أن تكون قيمة الحقل تاريخ",
+    "before_end_date" => "يجب أن يكون التاريخ قبل تاريخ الانتهاء",
+    "after_start_date" => "يجب أن يكون التاريخ بعد تاريخ البدء",
+    "exists" => "هذا العنصر غير موجود في الجدول",
+
+    "offering_created" => "تم إنشاء الدفعة بنجاح",
+    "workshop_offerings" => "دُفع الورشات",
+
+    "start_date" => "تاريخ البدء",
+    "end_date" => "تاريخ الانتهاء",
+    "price" => "السعر",
+    "max_capacity" => "عدد الطلاب",
+    "hours_per_day" => "ساعات الدراسة في اليوم",
+    "workshop" => "ورشة",
+    "teacher" => "معلم",
+    "workshop_details" => "تفاصيل الورشة",
+    "unable_to_find_workshop" => "لا توجد تفاصيل هذه الورشة",
 ];

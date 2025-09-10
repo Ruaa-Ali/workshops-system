@@ -19,9 +19,9 @@
                     <div class="flex flex-col">
                         <a href="{{ route('workshops.create') }}">add workshop</a>
                         <a href="{{ route('workshops.index') }}">view workshops</a>
+                        <a href="{{ route('offerings.create') }}">add offering</a>
                     </div>
                     @endrole
-
 
                 </div>
             </div>

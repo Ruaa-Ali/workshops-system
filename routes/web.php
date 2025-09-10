@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
 use App\Livewire\Workshops\UpdateWorkshop;
@@ -58,6 +59,10 @@ Route::group(
                 "workshops/{workshop}/update",
                 UpdateWorkshop::class,
             )->name("workshops.update");
+
+            Route::get("offerings/create", CreateWorkshopOffering::class)->name(
+                "offerings.create",
+            );
         });
     },
 );

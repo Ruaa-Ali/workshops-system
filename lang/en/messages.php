@@ -48,4 +48,22 @@ return [
     "dashboard" => "Dashboard",
 
     "create_workshop" => "Create New Workshop",
+
+    "date_field" => "This field must be a date",
+    "before_end_date" => "This field has to be before end date",
+    "after_start_date" => "This field has to be after start date",
+    "exists" => "Item does not exist in the table",
+
+    "offering_created" => "Offering created successfully!",
+    "workshop_offerings" => "Workshop Offerings",
+
+    "start_date" => "Start Date",
+    "end_date" => "End Date",
+    "price" => "Price",
+    "max_capacity" => "Max Capacity",
+    "hours_per_day" => "Hours Per Day",
+    "workshop" => "Workshop",
+    "teacher" => "Teacher",
+    "workshop_details" => "Workshop Details",
+    "unable_to_find_workshop" => "Unable to find workshop",
 ];
