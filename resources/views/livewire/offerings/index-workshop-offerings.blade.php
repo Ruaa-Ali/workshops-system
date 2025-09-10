@@ -47,6 +47,16 @@
 
                             <x-primary-button
                                 class="bg-red-800 dark:bg-red-500"
+                                wire:click="
+                                $dispatch(
+                                    'openModal',
+                                    {
+                                        component: 'offerings.delete-workshop-offering-warning',
+                                        arguments: {
+                                            id: {{ $o->id }}
+                                        }
+                                    }
+                                )"
                             >
                                 {{ __('messages.delete') }}
                             </x-primary-button>
