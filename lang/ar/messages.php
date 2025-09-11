@@ -90,6 +90,10 @@ return [
     "restore_warning_heading" => "تأكيد استعادة :item",
 
     "restore_workshop_msg" =>
-        // "You will restore this workshop which will allow you to edit it and create classes with it. Continue?",
         "ستقوم باستعادة هذا العنصر حيث ستتمكن من التعديل عليه وإنشاء صفوف جديدة. متابعة؟",
+
+    "enrollments" => "التسجيلات",
+
+    "enrolled_at" => "تاريخ التسجيل",
+    "student_name" => "اسم الطالب",
 ];

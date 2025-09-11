@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Enrollments\IndexEnrollments;
 use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
@@ -74,6 +75,10 @@ Route::group(
                 "offerings/{offering}/update",
                 UpdateWorkshopOfferings::class,
             )->name("offerings.update");
+
+            Route::get("enrollments", IndexEnrollments::class)->name(
+                "enrollments.index",
+            );
         });
     },
 );

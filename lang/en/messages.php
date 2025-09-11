@@ -89,4 +89,9 @@ return [
 
     "restore_workshop_msg" =>
         "You will restore this workshop which will allow you to edit it and create classes with it. Continue?",
+
+    "enrollments" => "Enrollments",
+
+    "enrolled_at" => "Enrolled At",
+    "student_name" => "Student Name",
 ];

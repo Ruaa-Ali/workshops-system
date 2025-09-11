@@ -26,4 +26,19 @@ class WorkshopOffering extends Model
     {
         return $this->belongsTo(Workshop::class, foreignKey: "workshop_id");
     }
+
+    public function enrollments()
+    {
+        $this->hasMany(Enrollment::class, "workshop_offering_id");
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(
+            User::class,
+            "enrollments",
+            "workshop_offering_id",
+            "student_id",
+        )->withTimestamps();
+    }
 }
