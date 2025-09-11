@@ -35,16 +35,16 @@
 
                             <x-primary-button
                                 class="bg-yellow-800 dark:bg-yellow-500"
-                                {{-- wire:click="
+                                wire:click="
                                 $dispatch(
                                     'openModal',
                                     {
-                                        component: 'workshops.archive-workshop-warning',
+                                        component: 'teachers.suspend-teachers-warning',
                                         arguments: {
                                             teacher: {{ $t->id }}
                                         }
                                     }
-                                )" --}}
+                                )"
                             >
                                 {{ __('messages.suspend') }}
                             </x-primary-button>

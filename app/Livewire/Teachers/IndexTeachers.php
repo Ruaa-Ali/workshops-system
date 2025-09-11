@@ -7,6 +7,7 @@ use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
+use Livewire\Attributes\On;
 
 #[Layout("layouts.app")]
 class IndexTeachers extends Component
