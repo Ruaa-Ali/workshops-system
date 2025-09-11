@@ -1,9 +1,9 @@
 <div class="flex flex-col">
-    <x-link-button href="{{ route('offerings.create') }}" class="self-end mt-5 mx-2">
+    <x-link-button href="{{ route('offerings.create') }}" class="self-end my-5 mx-2">
         {{ __('messages.create_offering') }}
     </x-link-button>
 
-    <div class="overflow-x-auto mx-2 ">
+    <div class="overflow-x-auto mx-2 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 pb-2">
         <table class="styled-table">
             <thead>
                 <tr>
