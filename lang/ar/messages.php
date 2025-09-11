@@ -96,4 +96,10 @@ return [
 
     "enrolled_at" => "تاريخ التسجيل",
     "student_name" => "اسم الطالب",
+
+    "add_teacher" => "إضافة معلم",
+    "suspend" => "تعليق الحساب",
+    "teachers" => "المعلمون",
+    "name" => "الاسم",
+    "email" => "الإيميل",
 ];

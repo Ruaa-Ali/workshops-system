@@ -34,6 +34,10 @@
                     <x-responsive-nav-link :href="route('enrollments.index')" :active="request()->routeIs('enrollments.index')">
                         {{ __('messages.enrollments') }}
                     </x-responsive-nav-link>
+
+                    <x-responsive-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.index')">
+                        {{ __('messages.teachers') }}
+                    </x-responsive-nav-link>
                     <!-- Add other navigation links here -->
                 </nav>
             </div>

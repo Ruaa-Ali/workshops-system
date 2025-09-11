@@ -94,4 +94,9 @@ return [
 
     "enrolled_at" => "Enrolled At",
     "student_name" => "Student Name",
+    "add_teacher" => "Add Teacher",
+    "suspend" => "Suspend",
+    "teachers" => "Teachers",
+    "name" => "Name",
+    "email" => "Email",
 ];
