@@ -154,4 +154,5 @@ return [
 
     "offering_details" => "Offering Details",
     "unable_to_find_offering" => "Unable to find offering",
+    "archive_offering_msg" => "This class contains enrollments",
 ];

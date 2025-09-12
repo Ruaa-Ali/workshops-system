@@ -5,7 +5,6 @@ namespace App\Livewire\Offerings;
 use App\Models\WorkshopOffering;
 use App\Traits\ToastNotifications;
 use LivewireUI\Modal\ModalComponent;
-use Livewire\Component;
 
 class DeleteWorkshopOfferingWarning extends ModalComponent
 {
@@ -13,9 +12,11 @@ class DeleteWorkshopOfferingWarning extends ModalComponent
 
     public string $id;
     public WorkshopOffering $offering;
+    public $leavePage;
 
-    public function mount()
+    public function mount(bool $leavePage = false)
     {
+        $this->leavePage = $leavePage ?? false;
         $this->offering = WorkshopOffering::find($this->id);
     }
 
@@ -32,6 +33,9 @@ class DeleteWorkshopOfferingWarning extends ModalComponent
         $this->dispatch("offering-deleted");
         $this->toastSuccess(__("messages.deleted_successfully"));
         $this->closeModal();
+        if ($this->leavePage) {
+            $this->redirect(route("offerings.index"));
+        }
     }
 
     public function render()

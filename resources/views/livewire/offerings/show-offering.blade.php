@@ -17,7 +17,7 @@
                   $dispatch(
                       'openModal',
                       {
-                          component: 'workshops.delete-workshop-warning',
+                          component: 'offerings.delete-workshop-offering-warning',
                           arguments: {
                               id: {{ $offering->id }},
                               leavePage: true,
@@ -28,22 +28,23 @@
                   {{ __('messages.delete') }}
               </x-primary-button>
               @else
-              {{-- <x-primary-button
+              <x-primary-button
                   class="bg-yellow-800 dark:bg-yellow-500"
                   wire:click="
                   $dispatch(
                       'openModal',
                       {
-                          component: 'workshops.archive-workshop-warning',
+                          component: 'offerings.archive-offering-warning',
                           arguments: {
-                              workshop: {{ $offering->id }},
+                              offering: {{ $offering->id }},
                               leavePage: true,
+                              title: '{{ $offering->workshop->getTitleAttribute() }}'
                           }
                       }
                   )"
               >
                   {{ __('messages.archive') }}
-              </x-primary-button> --}}
+              </x-primary-button>
               @endif
               </div>
           </div>
