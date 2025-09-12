@@ -13,7 +13,11 @@ class IndexWorkshopOfferings extends Component
 
     public function fetchOfferings()
     {
-        return WorkshopOffering::with(["workshop", "teacher"])->paginate(5);
+        return WorkshopOffering::with(["workshop", "teacher"])
+            // ->whereHas("workshop", function ($query) {
+            //     $query->whereNull("deleted_at"); // For soft deletes
+            // })
+            ->paginate(5);
     }
 
     public function render()

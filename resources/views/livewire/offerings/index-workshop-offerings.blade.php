@@ -23,10 +23,18 @@
                 @foreach ($offerings as $o)
                 <tr>
                     <td> <p>{{ $o->id }}</p> </td>
-                    <td> <a
+
+                    <td>
+                    @if($o->workshop != null)
+                        <a
                         href="{{ route('workshops.update', $o->workshop->id) }}"
                         class="underline">
-                            {{ $o->workshop->getTitleAttribute() }}</a> </td>
+                            {{ $o->workshop->getTitleAttribute() }}</a>
+                        @else
+                        {{ $o->workshop_id }} <span class="text-sm">({{__('messages.archived')}})</span>
+                   @endif
+                    </td>
+
                     <td> <p>{{ $o->start_date }}</p> </td>
                     <td> <p>{{ $o->end_date }}</p> </td>
                     <td> <p>{{ $o->hours_per_day }}</p> </td>

@@ -128,4 +128,5 @@ return [
     "add_student" => "Add Student",
     "add_admin" => "Add Admin",
     "you" => "(You)",
+    "archived" => "Archived",
 ];
