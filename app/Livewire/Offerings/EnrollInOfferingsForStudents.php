@@ -43,7 +43,7 @@ class EnrollInOfferingsForStudents extends ModalComponent
             $this->toastError(__("messages.already_enrolled"));
         }
 
-        // $this->dispatch("offering-deleted");
+        $this->dispatch("user-classes-updated");
         $this->closeModal();
     }
 

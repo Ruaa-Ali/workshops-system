@@ -5,7 +5,7 @@ namespace App\Livewire\StudentClasses;
 use App\Models\Enrollment;
 use Livewire\Component;
 use Livewire\WithPagination;
-
+use Livewire\Attributes\On;
 use Livewire\Attributes\Layout;
 
 #[Layout("layouts.app")]
@@ -27,6 +27,7 @@ class IndexStudentClasses extends Component
             ->paginate(5);
     }
 
+    #[On("user-classes-updated")]
     public function render()
     {
         $enrollments = $this->fetchUserClasses();
