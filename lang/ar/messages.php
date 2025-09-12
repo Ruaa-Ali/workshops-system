@@ -162,4 +162,7 @@ return [
 
     "offering_details" => "تفاصيل الصف",
     "unable_to_find_offering" => "تعذر العثور على الصف",
+    "status" => "الحالة",
+    "full" => "مكتمل",
+    "available" => "متاح",
 ];

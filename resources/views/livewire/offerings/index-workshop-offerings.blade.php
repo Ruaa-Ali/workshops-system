@@ -15,6 +15,7 @@
                     <th>{{ __('messages.price') }}</th>
                     <th>{{ __('messages.max_capacity') }}</th>
                     <th>{{ __('messages.teacher') }}</th>
+                    <th>{{ __('messages.status') }}</th>
                     <th>{{ __('messages.created_at') }}</th>
                     <th></th>
                 </tr>
@@ -41,6 +42,18 @@
                     <td> <p>{{ $o->price }}</p> </td>
                     <td> <p>{{ $o->max_capacity }}</p> </td>
                     <td> <p>{{ $o->teacher->name }}</p> </td>
+                    @php
+                        $status = count($o->students) >= $o->max_capacity ? 'full' : 'available';
+
+                        $statusConfig = [
+                            'full' => ['text' => __('messages.full'), 'class' => 'bg-gray-100 text-gray-800'],
+                            'available' => ['text' => __('messages.available'), 'class' => 'bg-green-100 text-blue-800'],
+                        ];
+                    @endphp
+
+                    <td> <span class="px-3 py-1 text-xs font-bold rounded-full {{ $statusConfig[$status]['class'] }}">
+                        {{ $statusConfig[$status]['text'] }}
+                    </span> </td>
                     <td> <p>{{ $o->created_at }}</p> </td>
                     <td>
                         <div class="flex flex-col gap-2 items-center">
