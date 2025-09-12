@@ -34,7 +34,7 @@ class WorkshopOffering extends Model
 
     public function enrollments()
     {
-        $this->hasMany(Enrollment::class, "workshop_offering_id");
+        return $this->hasMany(Enrollment::class, "workshop_offering_id");
     }
 
     public function students()
