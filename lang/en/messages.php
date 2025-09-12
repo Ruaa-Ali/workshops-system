@@ -121,6 +121,11 @@ return [
     "password" => "Password",
     "creating" => "Creating",
     "admin" => "Admin",
+    "admins" => "Admins",
+    "students" => "Students",
     "student" => "Student",
+
+    "add_student" => "Add Student",
+    "add_admin" => "Add Admin",
     "you" => "(You)",
 ];

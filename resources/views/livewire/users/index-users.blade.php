@@ -3,8 +3,8 @@
 
 
 
-    <x-link-button href="{{ route('users.create', 'role=teacher') }}" class="self-end my-5 mx-2">
-        {{ __('messages.add_teacher') }}
+    <x-link-button href="{{ route('users.create', 'role=' . request()->query('role')) }}" class="self-end my-5 mx-2">
+        {{ __('messages.add_' . request()->query('role')) }}
     </x-link-button>
 
     <div class="overflow-x-auto mx-2 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 pb-2">

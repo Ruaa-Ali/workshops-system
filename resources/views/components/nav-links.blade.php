@@ -13,8 +13,16 @@
         {{ __('messages.enrollments') }}
     </x-responsive-nav-link>
 
-    <x-responsive-nav-link :href="route('users.index', 'role=teacher')" :active="request()->routeIs('users.index') && request()->query('role') == 'teacher'">
+    <x-responsive-nav-link :href="route('users.index', 'role=teacher')" :active="request()->routeIs('users.index') && request()->query('role') == App\Enums\LocalRole::TEACHER->value">
         {{ __('messages.teachers') }}
+    </x-responsive-nav-link>
+
+    <x-responsive-nav-link :href="route('users.index', 'role=student')" :active="request()->routeIs('users.index') && request()->query('role') == App\Enums\LocalRole::STUDENT->value">
+        {{ __('messages.students') }}
+    </x-responsive-nav-link>
+
+    <x-responsive-nav-link :href="route('users.index', 'role=admin')" :active="request()->routeIs('users.index') && request()->query('role') == App\Enums\LocalRole::ADMIN->value">
+        {{ __('messages.admins') }}
     </x-responsive-nav-link>
     <!-- Add other navigation links here -->
 {{-- </nav> --}}
