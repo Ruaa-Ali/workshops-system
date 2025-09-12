@@ -29,7 +29,20 @@
                             </div>
                         </div>
 
-                        <x-primary-button class="w-full justify-center">
+                        <x-primary-button class="w-full justify-center"
+                            wire:click="
+                            $dispatch(
+                                'openModal',
+                                {
+                                    component: 'offerings.enroll-in-offerings-for-students',
+                                    arguments: {
+                                        id: {{ $o->id }},
+                                        title: '{{ $o->workshop->getTitleAttribute() }}',
+                                        date: '{{ $o->start_date->locale(app()->getLocale())->translatedFormat('l، j F Y') }}',
+                                    }
+                                }
+                            )"
+                        >
                             {{ __('messages.enroll_now') }}
                         </x-primary-button>
                     </div>

@@ -136,4 +136,15 @@ return [
     "hour_a_day" => ":item / day",
     "starts_on" => "Starts On",
     "with_eng" => "With Eng. ",
+    "enroll" => "Enroll",
+    "confirm_enroll" => "Enrolling to :item",
+    "enroll_msg" =>
+        "Once you click enroll, you will be registered as a student fot :item class that'll start on :date on our academy where you are going to attend every class. Contine?",
+
+    "enrolled_successfully" => "Enrolled Successfully",
+
+    "cant_perform_this_action" =>
+        "You do not have the permission to perform this action.",
+
+    "already_enrolled" => "You are already enrolled in this class.",
 ];
