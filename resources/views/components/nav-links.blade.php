@@ -28,5 +28,9 @@
     <x-responsive-nav-link :href="route('classes.index')" :active="request()->routeIs('classes.index')">
         {{ __('messages.available_classes') }}
     </x-responsive-nav-link>
+
+    <x-responsive-nav-link :href="route('students.classes.index')" :active="request()->routeIs('students.classes.index')">
+        {{ __('messages.my_classes') }}
+    </x-responsive-nav-link>
     <!-- Add other navigation links here -->
 {{-- </nav> --}}

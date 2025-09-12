@@ -5,6 +5,7 @@ use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Offerings\IndexOfferingsForStudents;
 use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
+use App\Livewire\StudentClasses\IndexStudentClasses;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\IndexUsers;
 use App\Livewire\Workshops\CreateWorkshop;
@@ -90,6 +91,10 @@ Route::group(
 
             Route::get("enrollments", IndexEnrollments::class)->name(
                 "enrollments.index",
+            );
+
+            Route::get("student/classes", IndexStudentClasses::class)->name(
+                "students.classes.index",
             );
 
             Route::get("users/", IndexUsers::class)->name("users.index");

@@ -147,4 +147,8 @@ return [
         "You do not have the permission to perform this action.",
 
     "already_enrolled" => "You are already enrolled in this class.",
+    "my_classes" => "My Classes",
+
+    "enrollment_date" => "Enrollment Date",
+    "class_status" => "Class Status",
 ];

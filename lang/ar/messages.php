@@ -154,4 +154,9 @@ return [
     "cant_perform_this_action" => "لا تمتلك صلاحيات القيام بهذا الإجراء",
 
     "already_enrolled" => "لقد قمت بالتسجيل في هذا الكلاس من قبل.",
+
+    "my_classes" => "صفوفي",
+
+    "enrollment_date" => "تاريخ التسجيل",
+    "class_status" => "حالة الصف",
 ];
