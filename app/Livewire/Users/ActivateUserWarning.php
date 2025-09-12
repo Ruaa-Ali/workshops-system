@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Livewire\Teachers;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use App\Traits\ToastNotifications;
 use Exception;
 use LivewireUI\Modal\ModalComponent;
 
-class ActivateTeachersWarning extends ModalComponent
+class ActivateUserWarning extends ModalComponent
 {
     use ToastNotifications;
 
-    public User $teacher;
+    public User $user;
 
     public function mount($id)
     {
-        $this->teacher = User::onlyTrashed()->find($id);
+        $this->user = User::onlyTrashed()->find($id);
     }
 
     public function activate()
     {
         try {
-            $this->teacher->restore();
-            $this->dispatch("teachers-updated");
+            $this->user->restore();
+            $this->dispatch("users-updated");
             $this->toastSuccess(__("messages.user_restored_successfully"));
             $this->closeModal();
         } catch (Exception $e) {
@@ -33,6 +33,6 @@ class ActivateTeachersWarning extends ModalComponent
 
     public function render()
     {
-        return view("livewire.teachers.activate-teachers-warning");
+        return view("livewire.users.activate-user-warning");
     }
 }

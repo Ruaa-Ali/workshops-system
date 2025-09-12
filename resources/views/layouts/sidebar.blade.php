@@ -35,7 +35,7 @@
                         {{ __('messages.enrollments') }}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.index')">
+                    <x-responsive-nav-link :href="route('users.index', 'role=teacher')" :active="request()->routeIs('users.index') && request()->query('role') == 'teacher'">
                         {{ __('messages.teachers') }}
                     </x-responsive-nav-link>
                     <!-- Add other navigation links here -->

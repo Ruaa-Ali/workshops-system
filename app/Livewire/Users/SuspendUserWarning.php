@@ -1,29 +1,29 @@
 <?php
 
-namespace App\Livewire\Teachers;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use App\Traits\ToastNotifications;
 use Exception;
 use LivewireUI\Modal\ModalComponent;
 
-class SuspendTeachersWarning extends ModalComponent
+class SuspendUserWarning extends ModalComponent
 {
     use ToastNotifications;
 
-    public User $teacher;
+    public User $user;
 
-    public function mount(User $teacher)
+    public function mount(User $user)
     {
-        $this->teacher = $teacher;
+        $this->user = $user;
     }
 
     public function suspend()
     {
         try {
             //TODO:  MUST INVALIDATE ALL USERS CREDENTIALS
-            $this->teacher->delete();
-            $this->dispatch("teachers-updated");
+            $this->user->delete();
+            $this->dispatch("users-updated");
             $this->toastSuccess(__("messages.suspended_successfully"));
             $this->closeModal();
         } catch (Exception $e) {
@@ -34,6 +34,6 @@ class SuspendTeachersWarning extends ModalComponent
 
     public function render()
     {
-        return view("livewire.teachers.suspend-teachers-warning");
+        return view("livewire.users.suspend-user-warning");
     }
 }

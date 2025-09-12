@@ -19,17 +19,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($teachers as $t)
-                <tr class="{{ $t->deleted_at !=  null ? 'deleted-row' : ''}}">
-                    <td>{{ $t->id }}</td>
-                    <td>{{ $t->name }} {{ $currentID == $t->id ? __('messages.you') : '' }}</td>
-                    <td>{{ $t->email }}</td>
-                    <td>{{ $t->created_at }}</td>
+                @foreach ($users as $u)
+                <tr class="{{ $u->deleted_at !=  null ? 'deleted-row' : ''}}">
+                    <td>{{ $u->id }}</td>
+                    <td>{{ $u->name }} {{ $currentID == $u->id ? __('messages.you') : '' }}</td>
+                    <td>{{ $u->email }}</td>
+                    <td>{{ $u->created_at }}</td>
                     <td>
-                        @if($currentID != $t->id)
+                        @if($currentID != $u->id)
                         <div class="flex flex-col gap-2 items-center">
-                            @if($t->deleted_at == null)
-                             {{-- href="{{ route('workshops.update', $t->id) }}" --}}
+                            @if($u->deleted_at == null)
+                             {{-- href="{{ route('workshops.update', $u->id) }}" --}}
                             <x-link-button>
                                 {{ __('messages.edit') }}
                             </x-link-button>
@@ -40,9 +40,9 @@
                                 $dispatch(
                                     'openModal',
                                     {
-                                        component: 'teachers.suspend-teachers-warning',
+                                        component: 'users.suspend-user-warning',
                                         arguments: {
-                                            teacher: {{ $t->id }}
+                                            user: {{ $u->id }}
                                         }
                                     }
                                 )"
@@ -57,9 +57,9 @@
                                 $dispatch(
                                     'openModal',
                                     {
-                                        component: 'teachers.activate-teachers-warning',
+                                        component: 'users.activate-user-warning',
                                         arguments: {
-                                            id: {{ $t->id }}
+                                            id: {{ $u->id }}
                                         }
                                     }
                                 )"
@@ -78,7 +78,7 @@
             </tbody>
         </table>
         <div class="mt-4 mx-2">
-            {{ $teachers->links() }}
+            {{ $users->links() }}
         </div>
     </div>
 
