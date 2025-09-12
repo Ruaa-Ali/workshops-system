@@ -52,18 +52,18 @@
 
                             @else
                             <x-secondary-button
-                                {{-- wire:click="
+                                wire:click="
                                 $dispatch(
                                     'openModal',
                                     {
-                                        component: 'workshops.restore-workshop-warning',
+                                        component: 'teachers.activate-teachers-warning',
                                         arguments: {
-                                            id: {{ $w->id }}
+                                            id: {{ $t->id }}
                                         }
                                     }
-                                )" --}}
+                                )"
                             >
-                                {{ __('messages.restore') }}
+                                {{ __('messages.activate') }}
                             </x-secondary-button>
 
                             @endif

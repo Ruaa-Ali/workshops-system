@@ -99,8 +99,14 @@ return [
     "teachers" => "Teachers",
     "name" => "Name",
     "email" => "Email",
-    "suspended_warning_heading" => "Suspending :item",
+    "suspended_warning_heading" => "Confirm Suspending :item",
     "suspended_warning" =>
         "After suspending this account, they will not be able to interact with the platform until you activate their account back. Contine?",
     "suspended_successfully" => "User has been suspended successfully",
+    "user_restored_successfully" => "User has been restored successfully",
+
+    "restore_warning" =>
+        "Once you activate this user's account they'll be able to interact with the platform. Continue?",
+    "activate" => "Activate",
+    "activate_warning_heading" => "Confirm Activating :item",
 ];
