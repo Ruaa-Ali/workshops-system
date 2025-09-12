@@ -75,7 +75,7 @@
                             >
                                 {{ __('messages.delete') }}
                             </x-primary-button>
-
+{{--
                             @else
                             <x-primary-button
                                 class="bg-yellow-800 dark:bg-yellow-500"
@@ -91,7 +91,7 @@
                                 )"
                             >
                                 {{ __('messages.archive') }}
-                            </x-primary-button>
+                            </x-primary-button> --}}
                             @endif
 
 

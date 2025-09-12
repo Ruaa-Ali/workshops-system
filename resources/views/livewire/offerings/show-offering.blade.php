@@ -27,7 +27,7 @@
               >
                   {{ __('messages.delete') }}
               </x-primary-button>
-              @else
+              {{-- @else
               <x-primary-button
                   class="bg-yellow-800 dark:bg-yellow-500"
                   wire:click="
@@ -44,7 +44,7 @@
                   )"
               >
                   {{ __('messages.archive') }}
-              </x-primary-button>
+              </x-primary-button> --}}
               @endif
               </div>
           </div>
