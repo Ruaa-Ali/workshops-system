@@ -158,4 +158,5 @@ return [
     "status" => "Status",
     "full" => "Full",
     "available" => "Available",
+    "search" => "Search",
 ];

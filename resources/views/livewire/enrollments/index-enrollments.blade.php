@@ -1,5 +1,12 @@
 <div class="flex flex-col">
     <div class="overflow-x-auto mt-5 mx-2 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 pb-2">
+        <x-input-label for="search" :value="__('messages.search')" class="mt-3"/>
+        <x-text-input id="search" class="block mt-1 w-full"
+        type="text"
+        min='1'
+        wire:model.live="search"
+        />
+        {{-- .debounce.500ms --}}
         <table class="styled-table">
             <thead>
                 <tr>

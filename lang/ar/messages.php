@@ -165,4 +165,5 @@ return [
     "status" => "الحالة",
     "full" => "مكتمل",
     "available" => "متاح",
+    "search" => "بحث",
 ];
