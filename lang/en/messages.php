@@ -109,4 +109,17 @@ return [
         "Once you activate this user's account they'll be able to interact with the platform. Continue?",
     "activate" => "Activate",
     "activate_warning_heading" => "Confirm Activating :item",
+
+    "string_field" => "This field has to be a text field",
+    "email_field" => "Please provide a valid email",
+    "user_created" => "User created successfully!",
+
+    "email_lowercase_field" => "The email address must be lowercase.",
+
+    "email_unique_field" => "This email address is already registered.",
+
+    "password" => "Password",
+    "creating" => "Creating",
+    "admin" => "Admin",
+    "student" => "Student",
 ];

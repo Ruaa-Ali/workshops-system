@@ -2,8 +2,8 @@
 
 
 
-    {{-- href="{{ route('workshops.create') }}" --}}
-    <x-link-button  class="self-end my-5 mx-2">
+
+    <x-link-button href="{{ route('users.create', 'role=teacher') }}" class="self-end my-5 mx-2">
         {{ __('messages.add_teacher') }}
     </x-link-button>
 

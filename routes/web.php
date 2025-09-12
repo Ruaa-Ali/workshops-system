@@ -4,6 +4,7 @@ use App\Livewire\Enrollments\IndexEnrollments;
 use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
+use App\Livewire\Users\CreateUser;
 use App\Livewire\Teachers\IndexTeachers;
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
@@ -84,6 +85,11 @@ Route::group(
             Route::get("teachers", IndexTeachers::class)->name(
                 "teachers.index",
             );
+
+            Route::get("users/create", CreateUser::class)
+                ->where("role", "teacher|student|admin")
+                ->name("users.create");
+            // ->middleware(["auth", "can:create-users"]);
         });
     },
 );

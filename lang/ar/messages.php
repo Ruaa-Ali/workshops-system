@@ -115,4 +115,18 @@ return [
     "activate" => "تفعيل",
 
     "activate_warning_heading" => "تأكيد تفعيل حساب :item",
+
+    "string_field" => "يجب أن يحتوي الحقل على نصوص",
+    "email_field" => "الرجاء كتابة إيميل صالح",
+    "user_created" => "تم إنشاء المستخدم بنجاح!",
+
+    "email_lowercase_field" =>
+        "يجب أن يكون البريد الإلكتروني مكتوبًا بأحرف صغيرة.",
+
+    "email_unique_field" => "البريد الإلكتروني مسجل بالفعل.",
+
+    "password" => "كلمة المرور",
+    "creating" => "إنشاء",
+    "admin" => "ادمن",
+    "student" => "طالب",
 ];
