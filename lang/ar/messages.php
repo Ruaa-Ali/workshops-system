@@ -56,7 +56,7 @@ return [
     "exists" => "هذا العنصر غير موجود في الجدول",
 
     "offering_created" => "تم إنشاء الدفعة بنجاح",
-    "workshop_offerings" => "دُفع الورشات",
+    "workshop_offerings" => "صفوف الورشات",
 
     "start_date" => "تاريخ البدء",
     "end_date" => "تاريخ الانتهاء",
@@ -73,9 +73,9 @@ return [
     "offering_updated" => "تم تعديل بيانات الدفعة بنجاح",
 
     "workshop_has_offerings" =>
-        "لن تتمكن من حذف هذه الورشة لاحتوائها على بعض الدُفع",
+        "لن تتمكن من حذف هذه الورشة لاحتوائها على بعض الصفوف",
 
-    "offerings_count" => "عدد الدُفع",
+    "offerings_count" => "عدد الصفوف",
     "archive" => "أرشفة",
     "restore" => "استعادة",
     "archive_workshop_msg" =>
@@ -159,4 +159,7 @@ return [
 
     "enrollment_date" => "تاريخ التسجيل",
     "class_status" => "حالة الصف",
+
+    "offering_details" => "تفاصيل الصف",
+    "unable_to_find_offering" => "تعذر العثور على الصف",
 ];

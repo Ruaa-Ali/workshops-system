@@ -151,4 +151,7 @@ return [
 
     "enrollment_date" => "Enrollment Date",
     "class_status" => "Class Status",
+
+    "offering_details" => "Offering Details",
+    "unable_to_find_offering" => "Unable to find offering",
 ];
