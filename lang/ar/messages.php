@@ -137,4 +137,12 @@ return [
 
     "you" => "(أنت)",
     "archived" => "مؤرشفة",
+
+    "available_classes" => "الصفوف المتاحة",
+    "enroll_now" => "سجل الآن",
+
+    "class_hours" => ":item ساعات",
+    "hour_a_day" => ":item ساعة / يوم",
+    "starts_on" => "تبدأ في",
+    "with_eng" => "مع م.",
 ];

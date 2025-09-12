@@ -129,4 +129,11 @@ return [
     "add_admin" => "Add Admin",
     "you" => "(You)",
     "archived" => "Archived",
+    "available_classes" => "Available Classes",
+    "enroll_now" => "Enroll Now",
+
+    "class_hours" => ":item hours",
+    "hour_a_day" => ":item / day",
+    "starts_on" => "Starts On",
+    "with_eng" => "With Eng. ",
 ];

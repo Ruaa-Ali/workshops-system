@@ -17,6 +17,11 @@ class WorkshopOffering extends Model
         "teacher_id",
     ];
 
+    protected $casts = [
+        "start_date" => "date",
+        "end_date" => "date",
+    ];
+
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(User::class, foreignKey: "teacher_id");

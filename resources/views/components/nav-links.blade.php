@@ -24,5 +24,9 @@
     <x-responsive-nav-link :href="route('users.index', 'role=admin')" :active="request()->routeIs('users.index') && request()->query('role') == App\Enums\LocalRole::ADMIN->value">
         {{ __('messages.admins') }}
     </x-responsive-nav-link>
+
+    <x-responsive-nav-link :href="route('classes.index')" :active="request()->routeIs('classes.index')">
+        {{ __('messages.available_classes') }}
+    </x-responsive-nav-link>
     <!-- Add other navigation links here -->
 {{-- </nav> --}}
