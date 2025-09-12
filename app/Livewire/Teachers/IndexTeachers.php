@@ -14,11 +14,18 @@ class IndexTeachers extends Component
 {
     use WithPagination;
 
+    public $currentID;
+
+    public function mount()
+    {
+        $this->currentID = auth()->id();
+    }
+
     public function fetchTeachers()
     {
         return User::role(LocalRole::TEACHER)
             ->withTrashed()
-            ->orderByRaw("deleted_at IS NOT NULL, deleted_at DESC")
+            ->orderByRaw("deleted_at IS NOT NULL, deleted_at DESC, id")
             ->paginate(10);
     }
 

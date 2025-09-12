@@ -22,10 +22,11 @@
                 @foreach ($teachers as $t)
                 <tr class="{{ $t->deleted_at !=  null ? 'deleted-row' : ''}}">
                     <td>{{ $t->id }}</td>
-                    <td>{{ $t->name }}</td>
+                    <td>{{ $t->name }} {{ $currentID == $t->id ? __('messages.you') : '' }}</td>
                     <td>{{ $t->email }}</td>
                     <td>{{ $t->created_at }}</td>
                     <td>
+                        @if($currentID != $t->id)
                         <div class="flex flex-col gap-2 items-center">
                             @if($t->deleted_at == null)
                              {{-- href="{{ route('workshops.update', $t->id) }}" --}}
@@ -68,6 +69,7 @@
 
                             @endif
                         </div>
+                        @endif
                     </td>
                 </tr>
 

@@ -122,4 +122,5 @@ return [
     "creating" => "Creating",
     "admin" => "Admin",
     "student" => "Student",
+    "you" => "(You)",
 ];

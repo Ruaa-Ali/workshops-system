@@ -129,4 +129,5 @@ return [
     "creating" => "إنشاء",
     "admin" => "ادمن",
     "student" => "طالب",
+    "you" => "(أنت)",
 ];
