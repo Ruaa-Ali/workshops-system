@@ -8,6 +8,7 @@ use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\IndexUsers;
 use App\Livewire\Workshops\CreateWorkshop;
 use App\Livewire\Workshops\IndexWorkshops;
+use App\Livewire\Workshops\ShowWorkshop;
 use App\Livewire\Workshops\UpdateWorkshop;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -58,6 +59,10 @@ Route::group(
 
             Route::get("workshops", IndexWorkshops::class)->name(
                 "workshops.index",
+            );
+
+            Route::get("workshops/{id}", ShowWorkshop::class)->name(
+                "workshops.show",
             );
 
             Route::get(

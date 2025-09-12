@@ -63,7 +63,7 @@ class CreateWorkshop extends Component
                 options: [
                     "showCloseBtn" => true,
                     "customBtnText" => __("messages.show"),
-                    "customBtnLink" => route("workshops.update", $workshop->id),
+                    "customBtnLink" => route("workshops.show", $workshop->id),
                 ],
             );
         } catch (Exception $e) {

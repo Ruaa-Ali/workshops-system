@@ -16,9 +16,11 @@ class DeleteWorkshopWarning extends ModalComponent
     public string $id;
     public Workshop $workshop;
     public string $title;
+    public bool $leavePage;
 
-    public function mount()
+    public function mount(bool $leavePage = false)
     {
+        $this->leavePage = $leavePage ?? false;
         $this->workshop = Workshop::with("offerings")->find($this->id);
         $this->title = $this->workshop->title_ar;
         if (app()->getLocale() == "en") {
@@ -44,6 +46,9 @@ class DeleteWorkshopWarning extends ModalComponent
             $this->dispatch("workshop-deleted");
             $this->toastSuccess(__("messages.deleted_successfully"));
             $this->closeModal();
+            if ($this->leavePage) {
+                $this->redirect(route("workshops.index"));
+            }
         } catch (QueryException $e) {
             $this->toastError($e->getMessage());
             $this->closeModal();

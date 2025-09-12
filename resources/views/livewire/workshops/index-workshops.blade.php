@@ -48,6 +48,12 @@
                     <td>
                         <div class="flex flex-col gap-2 items-center">
                             @if($w->deleted_at == null)
+
+
+                            <x-link-button href="{{ route('workshops.show', $w->id) }}">
+                                {{ __('messages.show') }}
+                            </x-link-button>
+
                             <x-link-button href="{{ route('workshops.update', $w->id) }}">
                                 {{ __('messages.edit') }}
                             </x-link-button>

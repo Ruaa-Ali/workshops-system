@@ -12,10 +12,12 @@ class ArchiveWorkshopWarning extends ModalComponent
     use ToastNotifications;
 
     public Workshop $workshop;
+    public bool $leavePage;
 
-    public function mount(Workshop $workshop)
+    public function mount(Workshop $workshop, bool $leavePage = false)
     {
         $this->workshop = $workshop;
+        $this->leavePage = $leavePage ?? false;
     }
 
     public function archive()
@@ -25,6 +27,9 @@ class ArchiveWorkshopWarning extends ModalComponent
             $this->dispatch("workshop-deleted");
             $this->toastSuccess(__("messages.archived_successfully"));
             $this->closeModal();
+            if ($this->leavePage) {
+                $this->redirect(route("workshops.index"));
+            }
         } catch (QueryException $e) {
             $this->toastError($e->getMessage());
             $this->closeModal();
