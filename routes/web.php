@@ -8,6 +8,7 @@ use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Offerings\ShowOffering;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
 use App\Livewire\StudentClasses\IndexStudentClasses;
+use App\Livewire\Teachers\IndexTeacherClasses;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\IndexUsers;
 use App\Livewire\Workshops\CreateWorkshop;
@@ -110,6 +111,7 @@ Route::group(
                     "can:" . PermissionsTypes::VIEW_ENROLLMENTS->value,
                 );
 
+            // TODO: change into oped-claases or available classes
             Route::middleware(["auth", "student"])->group(function () {
                 Route::get("classes", IndexOfferingsForStudents::class)->name(
                     "classes.index",
@@ -118,6 +120,19 @@ Route::group(
                 Route::get("student/classes", IndexStudentClasses::class)->name(
                     "students.classes.index",
                 );
+            });
+
+            Route::middleware([
+                "auth",
+                "can:" . PermissionsTypes::MANAGE_OWN_OFFERINGS->value,
+            ])->group(function () {
+                Route::get("teacher/classes", IndexTeacherClasses::class)->name(
+                    "teacher.offerings.index",
+                );
+
+                // Route::get("student/classes", IndexStudentClasses::class)->name(
+                //     "students.classes.index",
+                // );
             });
         });
     },

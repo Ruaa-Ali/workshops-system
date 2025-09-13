@@ -172,4 +172,5 @@ return [
     "excel_type" => "نوع الملف يجب أن يكون xls أو ods",
     "uploaded" => "تم رفع البيانات بنجاح",
     "upload" => "رفع",
+    "mark_attendance" => "تسجيل الحضور",
 ];

@@ -20,6 +20,12 @@
     </x-responsive-nav-link>
     @endcan
 
+    @can(App\Enums\PermissionsTypes::MANAGE_OWN_OFFERINGS)
+    <x-responsive-nav-link :href="route('teacher.offerings.index')" :active="request()->routeIs('teacher.offerings.index')">
+        {{ __('messages.my_classes') }}
+    </x-responsive-nav-link>
+    @endcan
+
     @can(App\Enums\PermissionsTypes::VIEW_ENROLLMENTS)
     <x-responsive-nav-link :href="route('enrollments.index')" :active="request()->routeIs('enrollments.index')">
         {{ __('messages.enrollments') }}

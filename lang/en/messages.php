@@ -165,4 +165,5 @@ return [
     "excel_type" => "File type must be xlsx or ods",
     "uploaded" => "Data uploaded successfully",
     "upload" => "Upload",
+    "mark_attendance" => "Mark Attendance",
 ];
