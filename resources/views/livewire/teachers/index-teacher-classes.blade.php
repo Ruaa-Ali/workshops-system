@@ -51,7 +51,7 @@
                         @if($status == 'in-progress')
                             <x-link-button href="">{{ __('messages.mark_attendance') }}</x-link-button>
                         @endif
-                            <x-link-button href="">{{ __('messages.show') }}</x-link-button>
+                            <x-link-button href="{{ route('teacher.offerings.show', $e->id) }}">{{ __('messages.show') }}</x-link-button>
                     </td>
                 </tr>
 

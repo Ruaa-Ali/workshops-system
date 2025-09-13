@@ -9,6 +9,7 @@ use App\Livewire\Offerings\ShowOffering;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
 use App\Livewire\StudentClasses\IndexStudentClasses;
 use App\Livewire\Teachers\IndexTeacherClasses;
+use App\Livewire\Teachers\ShowTeacherClass;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\IndexUsers;
 use App\Livewire\Workshops\CreateWorkshop;
@@ -130,9 +131,10 @@ Route::group(
                     "teacher.offerings.index",
                 );
 
-                // Route::get("student/classes", IndexStudentClasses::class)->name(
-                //     "students.classes.index",
-                // );
+                Route::get(
+                    "teacher/classes/{id}",
+                    ShowTeacherClass::class,
+                )->name("teacher.offerings.show");
             });
         });
     },
