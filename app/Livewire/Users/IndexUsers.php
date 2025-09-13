@@ -3,6 +3,7 @@
 namespace App\Livewire\Users;
 
 use App\Enums\LocalRole;
+use App\Enums\PermissionsTypes;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -20,6 +21,7 @@ class IndexUsers extends Component
 
     public function mount()
     {
+        $this->authorize(PermissionsTypes::MANAGE_USERS);
         $this->currentID = auth()->id();
         $this->role = request()->query("role");
         if (

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Users;
 
+use App\Enums\PermissionsTypes;
 use App\Models\User;
 use App\Traits\ToastNotifications;
 use Exception;
@@ -15,6 +16,7 @@ class ActivateUserWarning extends ModalComponent
 
     public function mount($id)
     {
+        $this->authorize(PermissionsTypes::MANAGE_USERS);
         $this->user = User::onlyTrashed()->find($id);
     }
 

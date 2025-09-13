@@ -3,6 +3,7 @@
 namespace App\Livewire\Users;
 
 use App\Enums\LocalRole;
+use App\Enums\PermissionsTypes;
 use App\Livewire\Forms\UserForm;
 use App\Models\User;
 use App\Traits\ToastNotifications;
@@ -23,6 +24,7 @@ class CreateUser extends Component
 
     public function mount()
     {
+        $this->authorize(PermissionsTypes::MANAGE_USERS);
         $this->role = request()->query("role");
         if (
             !in_array($this->role, [

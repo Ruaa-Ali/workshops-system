@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Workshops;
+use App\Enums\PermissionsTypes;
 use App\Models\Workshop;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
@@ -14,6 +15,7 @@ class IndexWorkshops extends Component
 
     public function fetchWorkshops()
     {
+        $this->authorize(PermissionsTypes::VIEW_WORKSHOPS);
         return Workshop::with("creator")
             ->withTrashed()
             ->orderByRaw("deleted_at IS NOT NULL, deleted_at DESC")

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Workshops;
 
+use App\Enums\PermissionsTypes;
 use App\Models\Workshop;
 use App\Traits\ToastNotifications;
 use Illuminate\Database\QueryException;
@@ -23,6 +24,7 @@ class ArchiveWorkshopWarning extends ModalComponent
     public function archive()
     {
         try {
+            $this->authorize(PermissionsTypes::MANAGE_WORKSHOPS);
             $this->workshop->delete();
             $this->dispatch("workshop-deleted");
             $this->toastSuccess(__("messages.archived_successfully"));

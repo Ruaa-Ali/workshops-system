@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Workshops;
 
+use App\Enums\PermissionsTypes;
 use App\Models\Workshop;
 use App\Traits\ToastNotifications;
 use Illuminate\Database\QueryException;
@@ -21,6 +22,7 @@ class RestoreWorkshopWarning extends ModalComponent
     public function restore()
     {
         try {
+            $this->authorize(PermissionsTypes::MANAGE_WORKSHOPS);
             $this->workshop->restore();
             $this->dispatch("workshop-deleted");
             $this->toastSuccess(__("messages.restored_successfully"));

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Enrollments;
 
+use App\Enums\PermissionsTypes;
 use App\Models\Enrollment;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -16,6 +17,7 @@ class IndexEnrollments extends Component
 
     public function fetchEnrollments()
     {
+        $this->authorize(PermissionsTypes::VIEW_ENROLLMENTS);
         return Enrollment::with(["class.workshop", "student"])
             ->when($this->search, function ($query) {
                 $query->where(function ($query) {

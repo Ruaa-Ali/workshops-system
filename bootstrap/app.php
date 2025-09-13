@@ -23,6 +23,9 @@ return Application::configure(basePath: dirname(__DIR__))
                 \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
             "localeViewPath" =>
                 \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
+
+            "admin" => \App\Http\Middleware\AdminMiddleware::class,
+            "student" => \App\Http\Middleware\StudentMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

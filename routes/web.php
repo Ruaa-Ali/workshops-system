@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PermissionsTypes;
 use App\Livewire\Enrollments\IndexEnrollments;
 use App\Livewire\Offerings\CreateWorkshopOffering;
 use App\Livewire\Offerings\IndexOfferingsForStudents;
@@ -56,58 +57,68 @@ Route::group(
                 fn($handle) => Route::post("/custom/livewire/update", $handle),
             );
 
-            Route::get("workshops/create", CreateWorkshop::class)->name(
-                "workshops.create",
-            );
+            Route::middleware(["admin"])->group(function () {
+                Route::get("workshops/create", CreateWorkshop::class)->name(
+                    "workshops.create",
+                );
 
-            Route::get("workshops", IndexWorkshops::class)->name(
-                "workshops.index",
-            );
+                Route::get("workshops/{id}", ShowWorkshop::class)->name(
+                    "workshops.show",
+                );
 
-            Route::get("workshops/{id}", ShowWorkshop::class)->name(
-                "workshops.show",
-            );
+                Route::get(
+                    "workshops/{workshop}/update",
+                    UpdateWorkshop::class,
+                )->name("workshops.update");
 
-            Route::get(
-                "workshops/{workshop}/update",
-                UpdateWorkshop::class,
-            )->name("workshops.update");
+                Route::get("users/", IndexUsers::class)->name("users.index");
 
-            Route::get("offerings/create", CreateWorkshopOffering::class)->name(
-                "offerings.create",
-            );
+                Route::get("users/create", CreateUser::class)
+                    ->where("role", "teacher|student|admin")
+                    ->name("users.create");
+            });
 
-            Route::get("offerings", IndexWorkshopOfferings::class)->name(
-                "offerings.index",
-            );
+            Route::get("workshops", IndexWorkshops::class)
+                ->name("workshops.index")
+                ->middleware("can:" . PermissionsTypes::VIEW_WORKSHOPS->value);
 
-            Route::get("offerings/{id}", ShowOffering::class)->name(
-                "offerings.show",
-            );
+            Route::middleware([
+                "can:" . PermissionsTypes::MANAGE_OFFERINGS->value,
+            ])->group(function () {
+                Route::get(
+                    "offerings/create",
+                    CreateWorkshopOffering::class,
+                )->name("offerings.create");
 
-            Route::get("classes", IndexOfferingsForStudents::class)->name(
-                "classes.index",
-            );
+                Route::get("offerings", IndexWorkshopOfferings::class)->name(
+                    "offerings.index",
+                );
 
-            Route::get(
-                "offerings/{offering}/update",
-                UpdateWorkshopOfferings::class,
-            )->name("offerings.update");
+                Route::get("offerings/{id}", ShowOffering::class)->name(
+                    "offerings.show",
+                );
 
-            Route::get("enrollments", IndexEnrollments::class)->name(
-                "enrollments.index",
-            );
+                Route::get(
+                    "offerings/{offering}/update",
+                    UpdateWorkshopOfferings::class,
+                )->name("offerings.update");
+            });
 
-            Route::get("student/classes", IndexStudentClasses::class)->name(
-                "students.classes.index",
-            );
+            Route::get("enrollments", IndexEnrollments::class)
+                ->name("enrollments.index")
+                ->middleware(
+                    "can:" . PermissionsTypes::VIEW_ENROLLMENTS->value,
+                );
 
-            Route::get("users/", IndexUsers::class)->name("users.index");
+            Route::middleware(["auth", "student"])->group(function () {
+                Route::get("classes", IndexOfferingsForStudents::class)->name(
+                    "classes.index",
+                );
 
-            Route::get("users/create", CreateUser::class)
-                ->where("role", "teacher|student|admin")
-                ->name("users.create");
-            // ->middleware(["auth", "can:create-users"]);
+                Route::get("student/classes", IndexStudentClasses::class)->name(
+                    "students.classes.index",
+                );
+            });
         });
     },
 );

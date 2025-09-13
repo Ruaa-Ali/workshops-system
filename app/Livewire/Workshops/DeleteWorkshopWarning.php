@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Workshops;
 
+use App\Enums\PermissionsTypes;
 use App\Models\Workshop;
 // use Illuminate\Support\Facades\Gate;
 
@@ -20,6 +21,7 @@ class DeleteWorkshopWarning extends ModalComponent
 
     public function mount(bool $leavePage = false)
     {
+        $this->authorize(PermissionsTypes::MANAGE_WORKSHOPS);
         $this->leavePage = $leavePage ?? false;
         $this->workshop = Workshop::with("offerings")->find($this->id);
         $this->title = $this->workshop->title_ar;

@@ -16,6 +16,7 @@ class DeleteWorkshopOfferingWarning extends ModalComponent
 
     public function mount(bool $leavePage = false)
     {
+        $this->authorize(PermissionsTypes::MANAGE_OFFERINGS);
         $this->leavePage = $leavePage ?? false;
         $this->offering = WorkshopOffering::find($this->id);
     }

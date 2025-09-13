@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Offerings;
 
+use App\Enums\PermissionsTypes;
 use App\Models\WorkshopOffering;
 use App\Traits\ToastNotifications;
 use LivewireUI\Modal\ModalComponent;
@@ -27,6 +28,7 @@ class ArchiveOfferingWarning extends ModalComponent
     public function archive()
     {
         try {
+            $this->authorize(PermissionsTypes::MANAGE_OFFERINGS);
             $this->offering->delete();
             $this->dispatch("offering-deleted");
             $this->toastSuccess(__("messages.archived_successfully"));

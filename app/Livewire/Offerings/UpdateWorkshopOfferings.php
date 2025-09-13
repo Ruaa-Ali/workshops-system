@@ -3,6 +3,7 @@
 namespace App\Livewire\Offerings;
 
 use App\Enums\LocalRole;
+use App\Enums\PermissionsTypes;
 use App\Livewire\Forms\WorkshopOfferingForm;
 use App\Models\User;
 use App\Models\Workshop;
@@ -23,6 +24,7 @@ class UpdateWorkshopOfferings extends Component
 
     public function mount(WorkshopOffering $offering)
     {
+        $this->authorize(PermissionsTypes::MANAGE_OFFERINGS);
         $this->form->setOffering($offering);
         $this->offering = $offering;
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Offerings;
 
+use App\Enums\PermissionsTypes;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use App\Models\WorkshopOffering;
@@ -11,6 +12,7 @@ class IndexOfferingsForStudents extends Component
 {
     public function fetchOfferings()
     {
+        $this->authorize(PermissionsTypes::VIEW_CLASSES);
         return WorkshopOffering::with(["workshop", "teacher"])
             ->whereHas("workshop", function ($query) {
                 $query->whereNull("deleted_at"); // For soft deletes

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Users;
 
+use App\Enums\PermissionsTypes;
 use App\Models\User;
 use App\Traits\ToastNotifications;
 use Exception;
@@ -21,6 +22,7 @@ class SuspendUserWarning extends ModalComponent
     public function suspend()
     {
         try {
+            $this->authorize(PermissionsTypes::MANAGE_USERS);
             //TODO:  MUST INVALIDATE ALL USERS CREDENTIALS
             $this->user->delete();
             $this->dispatch("users-updated");

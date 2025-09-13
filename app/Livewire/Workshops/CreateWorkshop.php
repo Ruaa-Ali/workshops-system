@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Workshops;
 
+use App\Enums\PermissionsTypes;
 use App\Livewire\Forms\WorkshopForm;
 use App\Models\Workshop;
 use App\Traits\ToastNotifications;
@@ -20,6 +21,7 @@ class CreateWorkshop extends Component
     public function save()
     {
         try {
+            $this->authorize(PermissionsTypes::MANAGE_WORKSHOPS);
             $this->form->validate();
 
             $fileName =
