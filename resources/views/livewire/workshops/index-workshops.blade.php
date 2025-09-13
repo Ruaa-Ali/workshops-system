@@ -2,9 +2,23 @@
 
 
 
-    <x-link-button href="{{ route('workshops.create') }}" class="self-end my-5 mx-2">
-        {{ __('messages.create_workshop') }}
-    </x-link-button>
+    <div class="self-end">
+        <x-link-button href="{{ route('workshops.create') }}" class="self-end my-5 mx-2">
+            {{ __('messages.create_workshop') }}
+        </x-link-button>
+
+        <x-primary-button class="self-end my-5 mx-2"
+            wire:click="
+            $dispatch(
+                'openModal',
+                {
+                    component: 'workshops.upload-workshops-from-excel',
+                }
+            )"
+        >
+            {{ __('messages.upload_excel') }}
+        </x-primary-button>
+    </div>
 
     <div class="overflow-x-auto mx-2 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 pb-2">
         <table class="styled-table">

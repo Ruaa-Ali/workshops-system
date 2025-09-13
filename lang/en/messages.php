@@ -159,4 +159,10 @@ return [
     "full" => "Full",
     "available" => "Available",
     "search" => "Search",
+    "upload_excel" => "Upload Excel",
+    "excelFile" => "Excel Files",
+    "import_from_excel" => "Import From Excel",
+    "excel_type" => "File type must be xlsx or ods",
+    "uploaded" => "Data uploaded successfully",
+    "upload" => "Upload",
 ];

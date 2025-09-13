@@ -166,4 +166,10 @@ return [
     "full" => "مكتمل",
     "available" => "متاح",
     "search" => "بحث",
+    "upload_excel" => "رفع ملف اكسل",
+    "excelFile" => "ملف الإكسل",
+    "import_from_excel" => "استيراد من ملف الاكسل",
+    "excel_type" => "نوع الملف يجب أن يكون xls أو ods",
+    "uploaded" => "تم رفع البيانات بنجاح",
+    "upload" => "رفع",
 ];
