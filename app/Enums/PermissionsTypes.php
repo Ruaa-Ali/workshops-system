@@ -12,4 +12,5 @@ enum PermissionsTypes: string
     case MANAGE_USERS = "manage users";
     case VIEW_CLASSES = "view classes";
     case ENROLL_TO_CLASSES = "enroll to classes";
+    case MANAGE_OWN_OFFERINGS = "manage own offerings";
 }
