@@ -56,4 +56,14 @@ class User extends Authenticatable
             "workshop_offering_id",
         )->withTimestamps();
     }
+
+    public function attendances()
+    {
+        return $this->hasManyThrough(
+            Attendance::class,
+            Enrollment::class,
+            "student_id",
+            "enrollment_id",
+        );
+    }
 }

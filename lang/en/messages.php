@@ -186,4 +186,5 @@ return [
     "complete" => "Complete",
     "users" => "Users",
     "best_students" => "Best Students",
+    "export_att" => "Export Attendance",
 ];

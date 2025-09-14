@@ -194,4 +194,5 @@ return [
     "complete" => "مكتملة",
     "users" => "المستخدمون",
     "best_students" => "أفضل الطلاب",
+    "export_att" => "تصدير الحضور",
 ];

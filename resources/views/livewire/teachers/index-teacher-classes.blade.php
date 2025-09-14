@@ -50,6 +50,7 @@
                     <td class="flex flex-col gap-2 items-center content-center">
                         @if($status == 'in-progress')
                             <x-link-button href="{{ route('teacher.offerings.attendance', $e->id) }}">{{ __('messages.mark_attendance') }}</x-link-button>
+                            <x-primary-button wire:click='exportAttendance({{$e->id}})'>{{ __('messages.export_att') }}</x-primary-button>
                         @endif
                             <x-link-button href="{{ route('teacher.offerings.show', $e->id) }}">{{ __('messages.show') }}</x-link-button>
                     </td>

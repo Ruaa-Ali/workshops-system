@@ -8,6 +8,8 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
+use Excel;
+use App\Exports\AttendanceExport;
 
 #[Layout("layouts.app")]
 class IndexTeacherClasses extends Component
@@ -31,6 +33,27 @@ class IndexTeacherClasses extends Component
         //     )
         //     ->orderBy("workshop_offerings.start_date", "asc")
         //     ->paginate(5);
+    }
+
+    public function exportAttendance($id)
+    {
+        // $workshopOffering = WorkshopOffering::with(["sessions", "students."]);
+        $workshopOffering = WorkshopOffering::with([
+            "sessions:id,session_date,workshop_offering_id",
+            "students.attendances" => function ($query) {
+                $query->select(
+                    "attendances.id",
+                    "session_id",
+                    "enrollment_id",
+                    "status",
+                );
+            },
+        ])->find($id);
+        $fileName = "attendance_{$id}.xlsx";
+        return Excel::download(
+            new AttendanceExport($workshopOffering),
+            $fileName,
+        );
     }
 
     #[On("teacher-classes-updated")]
