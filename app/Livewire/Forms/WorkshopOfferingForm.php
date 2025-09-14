@@ -24,6 +24,8 @@ class WorkshopOfferingForm extends Form
     public $workshopID = "";
     #[Validate]
     public $teacherID = "";
+    #[Validate]
+    public $offDays = [5];
 
     public function setOffering(WorkshopOffering $offering): void
     {
@@ -34,6 +36,9 @@ class WorkshopOfferingForm extends Form
         $this->price = $offering->price;
         $this->workshopID = $offering->workshop_id;
         $this->teacherID = $offering->teacher_id;
+        $this->offDays = explode(",", $offering->off_days);
+        // dd($offering->off_days);
+        // dd($this->offDays);
     }
 
     protected function rules(): array

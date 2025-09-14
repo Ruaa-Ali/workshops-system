@@ -15,6 +15,7 @@ class WorkshopOffering extends Model
         "price",
         "workshop_id",
         "teacher_id",
+        "off_days",
     ];
 
     protected $casts = [
@@ -45,5 +46,10 @@ class WorkshopOffering extends Model
             "workshop_offering_id",
             "student_id",
         )->withTimestamps();
+    }
+
+    public function sessions()
+    {
+        return $this->hasMany(OfferingSession::class, "workshop_offering_id");
     }
 }

@@ -166,4 +166,8 @@ return [
     "uploaded" => "Data uploaded successfully",
     "upload" => "Upload",
     "mark_attendance" => "Mark Attendance",
+    "off_days" => "Off Days",
+    "estimated_end_date" => "Estimated end date: :item",
+    "end_date_note" =>
+        "Please ensure accuracy when setting end date because sessions will be generated according to it",
 ];

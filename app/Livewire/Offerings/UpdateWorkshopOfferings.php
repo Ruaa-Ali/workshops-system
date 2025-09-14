@@ -8,6 +8,7 @@ use App\Livewire\Forms\WorkshopOfferingForm;
 use App\Models\User;
 use App\Models\Workshop;
 use App\Models\WorkshopOffering;
+use App\Traits\CalculateOfferingDates;
 use App\Traits\ToastNotifications;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -15,10 +16,13 @@ use Livewire\Attributes\Layout;
 #[Layout("layouts.app")]
 class UpdateWorkshopOfferings extends Component
 {
-    use ToastNotifications;
+    use ToastNotifications, CalculateOfferingDates;
+
     public WorkshopOfferingForm $form;
     public WorkshopOffering $offering;
     public Workshop $workshop;
+    public $estimatedEndDate;
+
     public $workshops = [];
     public $teachers = [];
 
@@ -64,8 +68,11 @@ class UpdateWorkshopOfferings extends Component
             $this->offering->price = $this->form->price;
             $this->offering->workshop_id = $this->form->workshopID;
             $this->offering->teacher_id = $this->form->teacherID;
+            $this->offering->off_days = implode(",", $this->form->offDays);
 
             $this->offering->save();
+
+            // TODO: update sessions
 
             // Optional: Fire event
             // event(new WorkshopCreated($workshop));
@@ -79,5 +86,47 @@ class UpdateWorkshopOfferings extends Component
     public function render()
     {
         return view("livewire.offerings.update-workshop-offerings");
+    }
+
+    public function updatedFormStartDate($value)
+    {
+        $this->calculateEstimatedDate(
+            $this->form->startDate,
+            $this->workshop->duration_hours,
+            $this->form->hoursPerDay,
+            $this->form->offDays,
+        );
+    }
+
+    public function updatedFormHoursPerDay($value)
+    {
+        $this->calculateEstimatedDate(
+            $this->form->startDate,
+            $this->workshop->duration_hours,
+            $this->form->hoursPerDay,
+            $this->form->offDays,
+        );
+    }
+
+    public function calculateEstimatedDate($start, $total, $perDay, $offDays)
+    {
+        if ($perDay == "") {
+            $perDay = 1;
+        }
+        $endDate = $this->calculateEndDate($start, $total, $perDay, $offDays);
+        $this->estimatedEndDate = date("Y-m-d", strtotime($endDate));
+        $this->form->endDate = $this->estimatedEndDate;
+    }
+
+    public function updated($propertyName, $value)
+    {
+        if (str_starts_with($propertyName, "form.offDays")) {
+            $this->calculateEstimatedDate(
+                $this->form->startDate,
+                $this->workshop->duration_hours,
+                $this->form->hoursPerDay,
+                $this->form->offDays,
+            );
+        }
     }
 }

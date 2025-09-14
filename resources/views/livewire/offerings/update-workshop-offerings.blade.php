@@ -74,12 +74,15 @@
                 </x-select-input>
                 <x-input-error :messages="$errors->get('form.teacherID')" class="mt-2" />
 
+                {{-- <p> {{ __('messages.estimated_end_date', ['item' => $estimatedEndDate]) }}</p>
+                <p class="text-sm"> {{ __('messages.end_date_note') }}</p> --}}
                 <div class="flex flex-col md:flex-row justify-center gap-2 ">
                     <div class="flex-1">
                         <x-input-label for="startDate" :value="__('messages.start_date')" />
                         <x-text-input id="startDate" class="block mt-1 w-full"
                         type="date"
-                        wire:model="form.startDate"
+                        disabled
+                        wire:model.live="form.startDate"
                         />
                         <x-input-error :messages="$errors->get('form.startDate')" class="mt-2" />
                     </div>
@@ -88,10 +91,42 @@
                         <x-input-label for="endDate" :value="__('messages.end_date')" />
                         <x-text-input id="endDate" class="block mt-1 w-full"
                         type="date"
+                        disabled
                         wire:model="form.endDate"
                         />
                         <x-input-error :messages="$errors->get('form.endDate')" class="mt-2" />
                     </div>
+                </div>
+
+                <x-input-label :value="__('messages.off_days')" />
+                <div class="flex gap-5">
+
+                    @php
+                        Carbon\Carbon::setLocale(app()->getLocale());
+                    @endphp
+
+                    @for($i = 1; $i < 8; $i++)
+                    @php
+                        $dayName = Carbon\Carbon::createFromDate(1970, 1, 5)
+                            ->addDays($i - 1)
+                            ->translatedFormat('l'); // Localized day name
+                    @endphp
+
+
+                    {{-- @if($i != 5) --}}
+                    <div class="flex flex-col items-center">
+                        <x-input-label for="offDays{{$i}}" :value="$dayName" />
+                        <x-text-input class="block"
+                        type="checkbox"
+                        id="offDays{{$i}}"
+                        value="{{ $i }}"
+                        disabled
+                        wire:model.live="form.offDays"
+                        />
+                        <x-input-error :messages="$errors->get('form.endDate')" class="mt-2" />
+                    </div>
+                    {{-- @endif --}}
+                    @endfor
                 </div>
 
 
@@ -109,7 +144,7 @@
                 <x-text-input id="hoursPerDay" class="block mt-1 w-full"
                 type="number"
                 min='1'
-                wire:model="form.hoursPerDay"
+                wire:model.live="form.hoursPerDay"
                 />
                 <x-input-error :messages="$errors->get('form.hoursPerDay')" class="mt-2" />
 
