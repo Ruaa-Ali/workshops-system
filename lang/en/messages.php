@@ -170,4 +170,16 @@ return [
     "estimated_end_date" => "Estimated end date: :item",
     "end_date_note" =>
         "Please ensure accuracy when setting end date because sessions will be generated according to it",
+
+    "present" => "Present",
+    "absent" => "Absent",
+    "undo" => "Undo",
+    "no_session" => "No session for today",
+    "off_day" => "Today is off, enjoy your day",
+    "attendance_complete" =>
+        "Session is complete, here's the attendance for this day :item",
+    "end_session" => "End Session",
+    "taking_day_off" => "Are you taking the day off?",
+    "skip_attendance" => "Skip",
+    "check_students" => "Please check all students",
 ];

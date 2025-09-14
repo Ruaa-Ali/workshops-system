@@ -4,7 +4,7 @@
 
           <div class="flex items-center justify-between">
             <p class="text-xl font-bold mb-3">{{ __('messages.offering_details') }}</p>
-            <x-link-button href="">
+            <x-link-button href="{{ route('teacher.offerings.attendance', $offering->id) }}">
                 {{ __('messages.mark_attendance') }}
             </x-link-button>
           </div>

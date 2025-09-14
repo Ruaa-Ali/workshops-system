@@ -15,4 +15,9 @@ class OfferingSession extends Model
             "workshop_offering_id",
         );
     }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, "session_id");
+    }
 }

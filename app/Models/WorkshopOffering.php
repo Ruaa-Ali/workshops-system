@@ -45,7 +45,9 @@ class WorkshopOffering extends Model
             "enrollments",
             "workshop_offering_id",
             "student_id",
-        )->withTimestamps();
+        )
+            ->withPivot("id")
+            ->withTimestamps();
     }
 
     public function sessions()

@@ -9,6 +9,7 @@ use App\Livewire\Offerings\ShowOffering;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
 use App\Livewire\StudentClasses\IndexStudentClasses;
 use App\Livewire\Teachers\IndexTeacherClasses;
+use App\Livewire\Teachers\MarkClassAttendance;
 use App\Livewire\Teachers\ShowTeacherClass;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\IndexUsers;
@@ -135,6 +136,11 @@ Route::group(
                     "teacher/classes/{id}",
                     ShowTeacherClass::class,
                 )->name("teacher.offerings.show");
+
+                Route::get(
+                    "teacher/classes/{id}/attendance",
+                    MarkClassAttendance::class,
+                )->name("teacher.offerings.attendance");
             });
         });
     },
