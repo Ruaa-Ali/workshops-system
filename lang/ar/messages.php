@@ -190,4 +190,8 @@ return [
     "taking_day_off" => "هل ستأخذ يوم إجازة؟",
     "skip_attendance" => "تخطي",
     "check_students" => "يرجى التحقق من جميع الطلاب",
+    "active" => "جارية",
+    "complete" => "مكتملة",
+    "users" => "المستخدمون",
+    "best_students" => "أفضل الطلاب",
 ];

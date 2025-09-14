@@ -20,4 +20,9 @@ class Enrollment extends Model
     {
         return $this->belongsTo(User::class, "student_id");
     }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, "enrollment_id");
+    }
 }

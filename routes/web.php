@@ -7,6 +7,7 @@ use App\Livewire\Offerings\IndexOfferingsForStudents;
 use App\Livewire\Offerings\IndexWorkshopOfferings;
 use App\Livewire\Offerings\ShowOffering;
 use App\Livewire\Offerings\UpdateWorkshopOfferings;
+use App\Livewire\Stat\StatPage;
 use App\Livewire\StudentClasses\IndexStudentClasses;
 use App\Livewire\Teachers\IndexTeacherClasses;
 use App\Livewire\Teachers\MarkClassAttendance;
@@ -32,8 +33,12 @@ Route::group(
         ],
     ],
     function () {
-        Route::get("/", fn() => view("dashboard"))
-            ->middleware(["auth", "verified"])
+        Route::get("/", StatPage::class)
+            ->middleware([
+                "auth",
+                "verified",
+                "can:" . PermissionsTypes::VIEW_STATS->value,
+            ])
             ->name("dashboard");
 
         require __DIR__ . "/auth.php";

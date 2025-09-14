@@ -182,4 +182,8 @@ return [
     "taking_day_off" => "Are you taking the day off?",
     "skip_attendance" => "Skip",
     "check_students" => "Please check all students",
+    "active" => "Active",
+    "complete" => "Complete",
+    "users" => "Users",
+    "best_students" => "Best Students",
 ];
