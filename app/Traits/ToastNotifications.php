@@ -10,7 +10,7 @@ trait ToastNotifications
      */
     protected function toastSuccess(
         string $message,
-        ?string $title,
+        ?string $title = null,
         $options = [],
     ): void {
         $this->dispatch(
@@ -27,7 +27,7 @@ trait ToastNotifications
      */
     protected function toastError(
         string $message,
-        ?string $title,
+        ?string $title = null,
         $options = [],
     ): void {
         $this->dispatch(
@@ -44,7 +44,7 @@ trait ToastNotifications
      */
     protected function toastWarning(
         string $message,
-        ?string $title,
+        ?string $title = null,
         $options = [],
     ): void {
         $this->dispatch(
@@ -61,7 +61,7 @@ trait ToastNotifications
      */
     protected function toastInfo(
         string $message,
-        ?string $title,
+        ?string $title = null,
         $options = [],
     ): void {
         $this->dispatch(
@@ -79,7 +79,7 @@ trait ToastNotifications
     protected function toast(
         string $status,
         string $message,
-        ?string $title,
+        ?string $title = null,
         $options = [],
     ): void {
         $this->dispatch(
