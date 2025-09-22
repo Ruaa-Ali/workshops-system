@@ -56,7 +56,8 @@ class WorkshopForm extends Form
 
         // if this class is accessed via the create component, then make the image required
         if ($this->workshop == null) {
-            $rules["image"] = "required|image|mimes:jpeg,png,jpg,gif|max:10240";
+            $rules["image"] =
+                "required|image|mimes:jpeg,png,jpg,gif,webp|max:10240";
         }
 
         return $rules;
