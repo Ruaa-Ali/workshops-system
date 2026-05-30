@@ -36,8 +36,8 @@
                    @endif
                     </td>
 
-                    <td> <p>{{ $o->start_date }}</p> </td>
-                    <td> <p>{{ $o->end_date }}</p> </td>
+                    <td> <p>{{ $o->start_date->locale(app()->getLocale())->translatedFormat('l، j F Y') }}</p> </td>
+                    <td> <p>{{ $o->end_date->locale(app()->getLocale())->translatedFormat('l، j F Y') }}</p> </td>
                     <td> <p>{{ $o->hours_per_day }}</p> </td>
                     <td> <p>{{ $o->price }}</p> </td>
                     <td> <p>{{ $o->max_capacity }}</p> </td>
@@ -54,7 +54,7 @@
                     <td> <span class="px-3 py-1 text-xs font-bold rounded-full {{ $statusConfig[$status]['class'] }}">
                         {{ $statusConfig[$status]['text'] }}
                     </span> </td>
-                    <td> <p>{{ $o->created_at }}</p> </td>
+                    <td> <p>{{ $o->created_at->locale(app()->getLocale())->translatedFormat('l، j F Y') }}</p> </td>
                     <td>
                         <div class="flex flex-col gap-2 items-center">
                             <x-link-button href="{{ route('offerings.show', $o->id) }}">
